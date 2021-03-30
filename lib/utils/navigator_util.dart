@@ -1,5 +1,5 @@
 import 'package:fluro/fluro.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/config/application.dart';
 import 'package:mall/config/routers.dart';
 import 'package:mall/utils/string_util.dart';

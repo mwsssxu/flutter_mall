@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/entity/project_selection_detail_entity.dart';
 import 'package:mall/service/goods_service.dart';
 import 'package:mall/widgets/futurebuilder_widget.dart';

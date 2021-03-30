@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/service/goods_service.dart';
 import 'package:mall/entity/goods_detail_entity.dart';
 import 'package:mall/constant/string.dart';
@@ -356,6 +356,7 @@ class _GoodsDetailState extends State<GoodsDetail> {
   }
 
   Widget _detailView() {
+    print(_goodsDetail.info.detail);
     return Stack(
       alignment: AlignmentDirectional.bottomCenter,
       children: <Widget>[
@@ -475,6 +476,7 @@ class _GoodsDetailState extends State<GoodsDetail> {
   }
 
   Widget _attributeItemView(Attribute attribute) {
+    print(attribute.attribute + "&" + attribute.value);
     return Container(
         margin: EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
         decoration: BoxDecoration(

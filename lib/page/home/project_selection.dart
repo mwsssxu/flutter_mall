@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mall/entity/home_entity.dart';
 import 'package:mall/constant/string.dart';
@@ -45,7 +45,7 @@ class _ProjectSelectionViewState extends State<ProjectSelectionView> {
               ),
               Padding(
                   padding: EdgeInsets.only(
-                      top: ScreenUtil.instance.setHeight(10.0))),
+                      top: ScreenUtil.instance.setHeight(5.0))),
               Container(
                   padding:
                       EdgeInsets.only(left: ScreenUtil.instance.setWidth(10.0)),

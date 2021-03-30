@@ -1,5 +1,5 @@
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/constant/string.dart';
 import 'package:mall/entity/home_entity.dart';
 import 'package:mall/utils/navigator_util.dart';

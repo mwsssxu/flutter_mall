@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/entity/user_entity.dart';
 
 class UserInfoModel with ChangeNotifier {

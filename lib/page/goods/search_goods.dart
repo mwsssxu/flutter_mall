@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mall/constant/string.dart';
@@ -35,9 +35,10 @@ class _SearchGoodsViewState extends State<SearchGoodsView> {
         child: Stack(
           children: <Widget>[
             Container(
-              height: ScreenUtil.instance.setHeight(100.0),
+              height: ScreenUtil.instance.setHeight(70.0),
               color: Colors.deepOrangeAccent,
               child: Container(
+                // 搜索框所在容器
                   margin: EdgeInsets.only(
                       left: ScreenUtil.instance.setWidth(60.0),
                       top: ScreenUtil.instance.setHeight(10.0),
@@ -49,7 +50,7 @@ class _SearchGoodsViewState extends State<SearchGoodsView> {
                         color: Colors.white,
                         width: ScreenUtil.instance.setWidth(1.0)),
                     borderRadius: BorderRadius.circular(
-                        ScreenUtil.instance.setWidth(40.0)),
+                        ScreenUtil.instance.setWidth(10.0)),
                   ),
                   child: TextField(
                     onEditingComplete: _sort,
@@ -59,6 +60,10 @@ class _SearchGoodsViewState extends State<SearchGoodsView> {
                         color: Colors.black54,
                         fontSize: ScreenUtil.instance.setSp(26.0)),
                     decoration: InputDecoration(
+                      // 小空间内垂直居中
+                      // isDense: true,
+                      // 文本居中
+                      contentPadding: EdgeInsets.zero,
                       prefixIcon: Icon(
                         Icons.search,
                         size: ScreenUtil.instance.setWidth(50.0),
@@ -67,7 +72,8 @@ class _SearchGoodsViewState extends State<SearchGoodsView> {
                       hintText: Strings.GOODS_SEARCH_HINT,
                       hintStyle: TextStyle(
                           color: Colors.grey,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil.instance.setSp(26.0),
+                      ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent),
                       ),
@@ -81,7 +87,7 @@ class _SearchGoodsViewState extends State<SearchGoodsView> {
             Container(
                 height: double.infinity,
                 margin:
-                    EdgeInsets.only(top: ScreenUtil.instance.setHeight(210.0)),
+                    EdgeInsets.only(top: ScreenUtil.instance.setHeight(170.0)),
                 child: _goods == null || _goods.length == 0
                     ? EmptyView()
                     : GridView.builder(
@@ -104,7 +110,7 @@ class _SearchGoodsViewState extends State<SearchGoodsView> {
 
   Widget _sortView() {
     return Container(
-      margin: EdgeInsets.only(top: ScreenUtil.instance.setHeight(100.0)),
+      margin: EdgeInsets.only(top: ScreenUtil.instance.setHeight(70.0)),
       height: ScreenUtil.instance.setHeight(100.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

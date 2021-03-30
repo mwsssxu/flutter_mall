@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/service/mine_service.dart';
 import 'package:dio/dio.dart';
 import 'package:mall/constant/string.dart';

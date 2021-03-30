@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/constant/string.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

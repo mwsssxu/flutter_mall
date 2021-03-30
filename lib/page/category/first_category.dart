@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/entity/first_level_category.dart';
 import 'package:mall/event/category_event.dart';
 import 'package:mall/service/category_service.dart';

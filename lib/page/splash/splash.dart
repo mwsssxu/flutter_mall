@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/utils/navigator_util.dart';
 
 class SplashView extends StatefulWidget {

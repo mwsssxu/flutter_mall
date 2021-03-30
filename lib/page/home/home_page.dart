@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/service/home_service.dart';
 import 'package:mall/page/home/swiper.dart';
 import 'package:mall/page/home/category.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mall/entity/home_entity.dart';
 import 'package:mall/utils/navigator_util.dart';
 import 'package:mall/widgets/cached_image.dart';

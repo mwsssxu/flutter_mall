@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class WebViewPage extends StatelessWidget {

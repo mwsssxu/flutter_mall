@@ -53,16 +53,16 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                       width: double.infinity,
                       child: CachedImageView(
                           double.infinity,
-                          ScreenUtil.instance.setWidth(300.0),
+                          ScreenUtil().setWidth(300.0),
                           _brandDetailEntity.picUrl),
                     ),
                     Container(
                       margin:
-                          EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+                          EdgeInsets.all(ScreenUtil().setWidth(20.0)),
                       child: Text(
                         _brandDetailEntity.desc,
                         style: TextStyle(
-                            fontSize: ScreenUtil.instance.setSp(26.0),
+                            fontSize: ScreenUtil().setSp(26.0),
                             color: Colors.black54),
                       ),
                     )

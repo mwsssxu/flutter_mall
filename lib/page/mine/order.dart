@@ -51,7 +51,7 @@ class _OrderViewState extends State<OrderView> {
       ),
       body: Container(
         height: double.infinity,
-        margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+        margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
         child: _orders.length == 0
             ? EmptyView()
             : ListView.builder(
@@ -69,32 +69,32 @@ class _OrderViewState extends State<OrderView> {
         child: InkWell(
             onTap: () => _goOrderDetail(order.id),
             child: Container(
-              margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+              margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    height: ScreenUtil.instance.setHeight(80.0),
+                    height: ScreenUtil().setHeight(80.0),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Icon(
                           Icons.shop,
-                          size: ScreenUtil.instance.setWidth(60),
+                          size: ScreenUtil().setWidth(60),
                           color: Colors.deepOrangeAccent,
                         ),
                         Padding(
                             padding: EdgeInsets.only(
-                                left: ScreenUtil.instance.setWidth(10.0))),
+                                left: ScreenUtil().setWidth(10.0))),
                         Text(
                           Strings.MALL,
                           style: TextStyle(
                               color: Colors.black54,
-                              fontSize: ScreenUtil.instance.setSp(26.0)),
+                              fontSize: ScreenUtil().setSp(26.0)),
                         ),
                         Padding(
                             padding: EdgeInsets.only(
-                                left: ScreenUtil.instance.setWidth(10.0))),
+                                left: ScreenUtil().setWidth(10.0))),
                         Expanded(
                             child: Container(
                                 alignment: Alignment.centerRight,
@@ -106,7 +106,7 @@ class _OrderViewState extends State<OrderView> {
                                         "${order.orderSn}"),
                                     Icon(
                                       Icons.arrow_forward_ios,
-                                      size: ScreenUtil.instance.setWidth(40),
+                                      size: ScreenUtil().setWidth(40),
                                       color: Colors.grey[350],
                                     ),
                                   ],
@@ -124,7 +124,7 @@ class _OrderViewState extends State<OrderView> {
                       }),
                   Container(
                     margin: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(10.0)),
+                        top: ScreenUtil().setHeight(10.0)),
                     alignment: Alignment.centerRight,
                     child: Text(Strings.MINE_ORDER_TOTAL_GOODS +
                         "${goodNumber(order)}" +
@@ -161,13 +161,13 @@ class _OrderViewState extends State<OrderView> {
         children: <Widget>[
           Image.network(
             good.picUrl,
-            width: ScreenUtil.instance.setWidth(160.0),
-            height: ScreenUtil.instance.setHeight(160.0),
+            width: ScreenUtil().setWidth(160.0),
+            height: ScreenUtil().setHeight(160.0),
           ),
           Container(
             margin: EdgeInsets.only(
-                left: ScreenUtil.instance.setWidth(20.0),
-                top: ScreenUtil.instance.setHeight(20.0)),
+                left: ScreenUtil().setWidth(20.0),
+                top: ScreenUtil().setHeight(20.0)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -175,61 +175,61 @@ class _OrderViewState extends State<OrderView> {
                   good.goodsName,
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(10.0))),
+                        top: ScreenUtil().setHeight(10.0))),
                 Text(
                   good.specifications[0],
                   style: TextStyle(
                       color: Colors.grey,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(10.0))),
+                        top: ScreenUtil().setHeight(10.0))),
                 Wrap(
                   alignment: WrapAlignment.center,
                   children: <Widget>[
                     Container(
                       padding:
-                          EdgeInsets.all(ScreenUtil.instance.setWidth(6.0)),
+                          EdgeInsets.all(ScreenUtil().setWidth(6.0)),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         border: new Border.all(
                             color: Colors.deepOrangeAccent,
-                            width: ScreenUtil.instance.setWidth(1.0)), // 边色与边宽度
+                            width: ScreenUtil().setWidth(1.0)), // 边色与边宽度
                         color: Colors.deepOrangeAccent, // 底色
                         borderRadius: new BorderRadius.circular(
-                            (ScreenUtil.instance.setWidth(20.0))), // 圆角度
+                            (ScreenUtil().setWidth(20.0))), // 圆角度
                       ),
                       child: Text(
                         Strings.MINE_ORDER_TAG_ONE,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil.instance.setSp(20.0)),
+                            fontSize: ScreenUtil().setSp(20.0)),
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.only(
-                          left: ScreenUtil.instance.setWidth(10.0)),
+                          left: ScreenUtil().setWidth(10.0)),
                       padding:
-                          EdgeInsets.all(ScreenUtil.instance.setWidth(6.0)),
+                          EdgeInsets.all(ScreenUtil().setWidth(6.0)),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         border: new Border.all(
                             color: Colors.deepOrangeAccent,
-                            width: ScreenUtil.instance.setWidth(1.0)), // 边色与边宽度
+                            width: ScreenUtil().setWidth(1.0)), // 边色与边宽度
                         color: Colors.deepOrangeAccent, // 底色
                         borderRadius: new BorderRadius.circular(
-                            (ScreenUtil.instance.setWidth(20.0))), // 圆角度
+                            (ScreenUtil().setWidth(20.0))), // 圆角度
                       ),
                       child: Text(
                         Strings.MINE_ORDER_TAG_TWO,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil.instance.setSp(20.0)),
+                            fontSize: ScreenUtil().setSp(20.0)),
                       ),
                     )
                   ],
@@ -241,8 +241,8 @@ class _OrderViewState extends State<OrderView> {
               child: Container(
             alignment: Alignment.centerRight,
             margin: EdgeInsets.only(
-              left: ScreenUtil.instance.setWidth(20.0),
-              right: ScreenUtil.instance.setWidth(20.0),
+              left: ScreenUtil().setWidth(20.0),
+              right: ScreenUtil().setWidth(20.0),
             ),
             child: Column(
               children: <Widget>[
@@ -250,16 +250,16 @@ class _OrderViewState extends State<OrderView> {
                   "¥${good.price}",
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(24.0)),
+                      fontSize: ScreenUtil().setSp(24.0)),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(20.0))),
+                        top: ScreenUtil().setHeight(20.0))),
                 Text(
                   "X${good.number}",
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(24.0)),
+                      fontSize: ScreenUtil().setSp(24.0)),
                 ),
               ],
             ),

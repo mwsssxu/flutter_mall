@@ -20,7 +20,7 @@ class SwiperView extends StatelessWidget {
       width: double.infinity,
       child: bannerData == null || bannerData.length == 0
           ? Container(
-              height: ScreenUtil.instance.setHeight(400.0),
+              height: ScreenUtil().setHeight(400.0),
               color: Colors.grey,
               alignment: Alignment.center,
               child: Text(Strings.NO_DATA_TEXT),

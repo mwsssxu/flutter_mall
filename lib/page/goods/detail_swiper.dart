@@ -17,7 +17,7 @@ class DetailSwiperView extends StatelessWidget {
       height: viewHeight,
       child: bannerData == null || bannerData.length == 0
           ? Container(
-              height: ScreenUtil.instance.setHeight(200.0),
+              height: ScreenUtil().setHeight(200.0),
               color: Colors.grey,
               alignment: Alignment.center,
               child: Text(Strings.NO_DATA_TEXT),

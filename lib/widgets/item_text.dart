@@ -16,16 +16,16 @@ class ItemTextView extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.only(
-            left: ScreenUtil.instance.setWidth(20.0),
-            right: ScreenUtil.instance.setWidth(20.0)),
-        height: ScreenUtil.instance.setHeight(80.0),
+            left: ScreenUtil().setWidth(20.0),
+            right: ScreenUtil().setWidth(20.0)),
+        height: ScreenUtil().setHeight(80.0),
         child: Row(
           children: <Widget>[
             Text(
               leftText,
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: ScreenUtil.instance.setSp(26.0)),
+                  fontSize: ScreenUtil().setSp(26.0)),
             ),
             Expanded(
                 child: Container(
@@ -34,7 +34,7 @@ class ItemTextView extends StatelessWidget {
                 rightText,
                 style: TextStyle(
                     color: Colors.grey,
-                    fontSize: ScreenUtil.instance.setSp(26.0)),
+                    fontSize: ScreenUtil().setSp(26.0)),
               ),
             ))
           ],

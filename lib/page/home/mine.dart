@@ -73,7 +73,7 @@ class _MineViewState extends State<MineView> {
       body: Column(
         children: <Widget>[
           Container(
-            height: ScreenUtil.getInstance().setHeight(160.0),
+            height: ScreenUtil().setHeight(160.0),
             width: double.infinity,
             color: Colors.deepOrangeAccent,
             alignment: Alignment.center,
@@ -83,12 +83,12 @@ class _MineViewState extends State<MineView> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                        width: ScreenUtil.getInstance().setWidth(100),
-                        height: ScreenUtil.getInstance().setHeight(100),
+                        width: ScreenUtil().setWidth(100),
+                        height: ScreenUtil().setHeight(100),
                         margin: EdgeInsets.only(
-                            left: ScreenUtil.getInstance().setWidth(30.0)),
+                            left: ScreenUtil().setWidth(30.0)),
                         child: CircleAvatar(
-                          radius: ScreenUtil.getInstance().setWidth(50),
+                          radius: ScreenUtil().setWidth(50),
                           foregroundColor: Colors.deepOrangeAccent,
                           backgroundImage: NetworkImage(
                             imageHeadUrl,
@@ -97,12 +97,12 @@ class _MineViewState extends State<MineView> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            left: ScreenUtil.getInstance().setWidth(10.0)),
+                            left: ScreenUtil().setWidth(10.0)),
                       ),
                       Text(
                         nickName,
                         style: TextStyle(
-                            fontSize: ScreenUtil.getInstance().setSp(26.0),
+                            fontSize: ScreenUtil().setSp(26.0),
                             color: Colors.white),
                       ),
                       Expanded(
@@ -111,13 +111,13 @@ class _MineViewState extends State<MineView> {
                             child: Offstage(
                               offstage: !isLogin,
                               child: Container(
-                                padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(30)),
+                                padding: EdgeInsets.only(right: ScreenUtil().setWidth(30)),
                                 alignment: Alignment.centerRight,
                                 child: Text(
                                   Strings.LOGIN_OUT,
                                   style: TextStyle(
                                       fontSize:
-                                          ScreenUtil.getInstance().setSp(26),
+                                          ScreenUtil().setSp(26),
                                       color: Colors.white),
                                 ),
                               ),
@@ -131,54 +131,54 @@ class _MineViewState extends State<MineView> {
                       Strings.CLICK_LOGIN,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                          fontSize: ScreenUtil().setSp(30.0)),
                     ),
                   ),
           ),
           Padding(
             padding:
-                EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
+                EdgeInsets.only(top: ScreenUtil().setHeight(20.0)),
           ),
           IconTextArrowView(
               MallIcon.ORDER, Strings.ORDER, Colors.deepPurpleAccent, order),
           Divider(
-            height: ScreenUtil.getInstance().setHeight(1.0),
+            height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
           IconTextArrowView(
               MallIcon.COUPON, Strings.COUPON, Colors.green, mineCoupon),
           Divider(
-            height: ScreenUtil.getInstance().setHeight(1.0),
+            height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
           IconTextArrowView(
               MallIcon.COLLECTION, Strings.COLLECTION, Colors.red, collect),
           Divider(
-            height: ScreenUtil.getInstance().setHeight(1.0),
+            height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
           IconTextArrowView(
               MallIcon.ADDRESS, Strings.ADDRESS, Colors.amber, address),
           Divider(
-            height: ScreenUtil.getInstance().setHeight(1.0),
+            height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
           IconTextArrowView(
               MallIcon.FOOTPRINT, Strings.FOOTPRINT, Colors.pink, footprint),
           Divider(
-            height: ScreenUtil.getInstance().setHeight(1.0),
+            height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
           IconTextArrowView(MallIcon.FEED_BACK, Strings.FEED_BACK,
               Colors.blueAccent, feedbackCallback),
           Divider(
-            height: ScreenUtil.getInstance().setHeight(1.0),
+            height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
           IconTextArrowView(
               MallIcon.ABOUT_US, Strings.ABOUT_US, Colors.teal, aboutUs),
           Divider(
-            height: ScreenUtil.getInstance().setHeight(1.0),
+            height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
         ],
@@ -194,13 +194,13 @@ class _MineViewState extends State<MineView> {
             title: Text(
               Strings.TIPS,
               style: TextStyle(
-                  fontSize: ScreenUtil.getInstance().setSp(30),
+                  fontSize: ScreenUtil().setSp(30),
                   color: Colors.black54),
             ),
             content: Text(
               Strings.LOGIN_OUT_TIPS,
               style: TextStyle(
-                  fontSize: ScreenUtil.getInstance().setSp(30),
+                  fontSize: ScreenUtil().setSp(30),
                   color: Colors.black54),
             ),
             actions: <Widget>[

@@ -13,7 +13,7 @@ class AboutUsView extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+        margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -21,10 +21,10 @@ class AboutUsView extends StatelessWidget {
               Strings.MINE_ABOUT_US_CONTENT,
               style: TextStyle(
                   color: Colors.black54,
-                  fontSize: ScreenUtil.instance.setSp(26.0)),
+                  fontSize: ScreenUtil().setSp(26.0)),
             ),
             Padding(
-                padding: EdgeInsets.all(ScreenUtil.instance.setHeight(10.0))),
+                padding: EdgeInsets.all(ScreenUtil().setHeight(10.0))),
             DividerLineView(),
             ItemTextView(
                 Strings.MINE_ABOUT_AUTHOR_TITLE, Strings.MINE_ABOUT_AUTHOR),

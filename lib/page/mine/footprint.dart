@@ -51,15 +51,15 @@ class _FootprintViewState extends State<FootprintView> {
         centerTitle: true,
       ),
       body: Container(
-        margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+        margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
         child: _footprints.length == 0
             ? EmptyView()
             : GridView.builder(
                 itemCount: _footprints.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: ScreenUtil.instance.setWidth(10.0),
-                    crossAxisSpacing: ScreenUtil.instance.setHeight(10.0)),
+                    mainAxisSpacing: ScreenUtil().setWidth(10.0),
+                    crossAxisSpacing: ScreenUtil().setHeight(10.0)),
                 itemBuilder: (BuildContext context, int index) {
                   return getGoodsItemView(_footprints[index], index);
                 }),
@@ -120,13 +120,13 @@ class _FootprintViewState extends State<FootprintView> {
               Strings.TIPS,
               style: TextStyle(
                   color: Colors.black54,
-                  fontSize: ScreenUtil.instance.setSp(28.0)),
+                  fontSize: ScreenUtil().setSp(28.0)),
             ),
             content: Text(
               Strings.MINE_FOOTPRINT_DELETE,
               style: TextStyle(
                   color: Colors.black54,
-                  fontSize: ScreenUtil.instance.setSp(26.0)),
+                  fontSize: ScreenUtil().setSp(26.0)),
             ),
             actions: <Widget>[
               FlatButton(
@@ -137,7 +137,7 @@ class _FootprintViewState extends State<FootprintView> {
                     Strings.CANCEL,
                     style: TextStyle(
                         color: Colors.grey,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                   )),
               FlatButton(
                   onPressed: () {
@@ -148,7 +148,7 @@ class _FootprintViewState extends State<FootprintView> {
                     Strings.CONFIRM,
                     style: TextStyle(
                         color: Colors.deepOrangeAccent,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                   )),
             ],
           );

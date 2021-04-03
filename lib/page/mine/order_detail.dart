@@ -79,7 +79,7 @@ class _OrderDetailState extends State<OrderDetail> {
 
   Widget _contentView() {
     return Container(
-      margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+      margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -90,8 +90,8 @@ class _OrderDetailState extends State<OrderDetail> {
               Strings.MINE_ORDER_TIME, _orderDetailEntity.orderInfo.addTime),
           DividerLineView(),
           Container(
-              margin: EdgeInsets.only(left: ScreenUtil.instance.setWidth(20.0)),
-              height: ScreenUtil.instance.setHeight(80.0),
+              margin: EdgeInsets.only(left: ScreenUtil().setWidth(20.0)),
+              height: ScreenUtil().setHeight(80.0),
               alignment: Alignment.centerLeft,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -100,7 +100,7 @@ class _OrderDetailState extends State<OrderDetail> {
                     Strings.ORDER_INFORMATION,
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize: ScreenUtil.instance.setSp(26)),
+                        fontSize: ScreenUtil().setSp(26)),
                   ),
                   Expanded(
                       child: Container(
@@ -111,7 +111,7 @@ class _OrderDetailState extends State<OrderDetail> {
                               Strings.MINE_ORDER_ALREADY_CANCEL,
                               style: TextStyle(
                                   color: Colors.deepOrangeAccent,
-                                  fontSize: ScreenUtil.instance.setSp(26.0)),
+                                  fontSize: ScreenUtil().setSp(26.0)),
                             ),
                           )))
                 ],
@@ -127,9 +127,9 @@ class _OrderDetailState extends State<OrderDetail> {
           DividerLineView(),
           Container(
             margin: EdgeInsets.only(
-                left: ScreenUtil.instance.setWidth(20.0),
-                top: ScreenUtil.instance.setHeight(20.0),
-                bottom: ScreenUtil.instance.setHeight(20.0)),
+                left: ScreenUtil().setWidth(20.0),
+                top: ScreenUtil().setHeight(20.0),
+                bottom: ScreenUtil().setHeight(20.0)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,28 +140,28 @@ class _OrderDetailState extends State<OrderDetail> {
                       _orderDetailEntity.orderInfo.consignee,
                       style: TextStyle(
                           color: Colors.black54,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                          left: ScreenUtil.instance.setWidth(20.0)),
+                          left: ScreenUtil().setWidth(20.0)),
                     ),
                     Text(
                       _orderDetailEntity.orderInfo.mobile,
                       style: TextStyle(
                           color: Colors.black54,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                     ),
                   ],
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(20.0))),
+                        top: ScreenUtil().setHeight(20.0))),
                 Text(
                   _orderDetailEntity.orderInfo.address,
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                   softWrap: true,
                 ),
               ],
@@ -181,7 +181,7 @@ class _OrderDetailState extends State<OrderDetail> {
               Strings.DOLLAR + "${_orderDetailEntity.orderInfo.actualPrice}"),
           DividerLineView(),
           Container(
-            height: ScreenUtil.instance.setHeight(100.0),
+            height: ScreenUtil().setHeight(100.0),
             child: Row(
               children: <Widget>[
                 Expanded(
@@ -194,13 +194,13 @@ class _OrderDetailState extends State<OrderDetail> {
                   child: Text(
                     Strings.CANCEL,
                     style: TextStyle(
-                        fontSize: ScreenUtil.instance.setSp(28.0),
+                        fontSize: ScreenUtil().setSp(28.0),
                         color: Colors.white),
                   ),
                 )),
                 Padding(
                   padding:
-                      EdgeInsets.only(left: ScreenUtil.instance.setWidth(60.0)),
+                      EdgeInsets.only(left: ScreenUtil().setWidth(60.0)),
                 ),
                 Expanded(
                     child: MaterialButton(
@@ -212,7 +212,7 @@ class _OrderDetailState extends State<OrderDetail> {
                   child: Text(
                     Strings.DELETE,
                     style: TextStyle(
-                        fontSize: ScreenUtil.instance.setSp(28.0),
+                        fontSize: ScreenUtil().setSp(28.0),
                         color: Colors.white),
                   ),
                 ))
@@ -231,13 +231,13 @@ class _OrderDetailState extends State<OrderDetail> {
         children: <Widget>[
           Image.network(
             good.picUrl,
-            width: ScreenUtil.instance.setWidth(160.0),
-            height: ScreenUtil.instance.setHeight(160.0),
+            width: ScreenUtil().setWidth(160.0),
+            height: ScreenUtil().setHeight(160.0),
           ),
           Container(
             margin: EdgeInsets.only(
-                left: ScreenUtil.instance.setWidth(20.0),
-                top: ScreenUtil.instance.setHeight(20.0)),
+                left: ScreenUtil().setWidth(20.0),
+                top: ScreenUtil().setHeight(20.0)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -245,61 +245,61 @@ class _OrderDetailState extends State<OrderDetail> {
                   good.goodsName,
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(10.0))),
+                        top: ScreenUtil().setHeight(10.0))),
                 Text(
                   good.specifications[0],
                   style: TextStyle(
                       color: Colors.grey,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(10.0))),
+                        top: ScreenUtil().setHeight(10.0))),
                 Wrap(
                   alignment: WrapAlignment.center,
                   children: <Widget>[
                     Container(
                       padding:
-                          EdgeInsets.all(ScreenUtil.instance.setWidth(6.0)),
+                          EdgeInsets.all(ScreenUtil().setWidth(6.0)),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         border: new Border.all(
                             color: Colors.deepOrangeAccent,
-                            width: ScreenUtil.instance.setWidth(1.0)), // 边色与边宽度
+                            width: ScreenUtil().setWidth(1.0)), // 边色与边宽度
                         color: Colors.deepOrangeAccent, // 底色
                         borderRadius: new BorderRadius.circular(
-                            (ScreenUtil.instance.setWidth(20.0))), // 圆角度
+                            (ScreenUtil().setWidth(20.0))), // 圆角度
                       ),
                       child: Text(
                         Strings.MINE_ORDER_TAG_ONE,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil.instance.setSp(20.0)),
+                            fontSize: ScreenUtil().setSp(20.0)),
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.only(
-                          left: ScreenUtil.instance.setWidth(10.0)),
+                          left: ScreenUtil().setWidth(10.0)),
                       padding:
-                          EdgeInsets.all(ScreenUtil.instance.setWidth(6.0)),
+                          EdgeInsets.all(ScreenUtil().setWidth(6.0)),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         border: new Border.all(
                             color: Colors.deepOrangeAccent,
-                            width: ScreenUtil.instance.setWidth(1.0)), // 边色与边宽度
+                            width: ScreenUtil().setWidth(1.0)), // 边色与边宽度
                         color: Colors.deepOrangeAccent, // 底色
                         borderRadius: new BorderRadius.circular(
-                            (ScreenUtil.instance.setWidth(20.0))), // 圆角度
+                            (ScreenUtil().setWidth(20.0))), // 圆角度
                       ),
                       child: Text(
                         Strings.MINE_ORDER_TAG_TWO,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil.instance.setSp(20.0)),
+                            fontSize: ScreenUtil().setSp(20.0)),
                       ),
                     )
                   ],
@@ -311,8 +311,8 @@ class _OrderDetailState extends State<OrderDetail> {
               child: Container(
             alignment: Alignment.centerRight,
             margin: EdgeInsets.only(
-              left: ScreenUtil.instance.setWidth(20.0),
-              right: ScreenUtil.instance.setWidth(20.0),
+              left: ScreenUtil().setWidth(20.0),
+              right: ScreenUtil().setWidth(20.0),
             ),
             child: Column(
               children: <Widget>[
@@ -320,16 +320,16 @@ class _OrderDetailState extends State<OrderDetail> {
                   "¥${good.price}",
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(24.0)),
+                      fontSize: ScreenUtil().setSp(24.0)),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(20.0))),
+                        top: ScreenUtil().setHeight(20.0))),
                 Text(
                   "X${good.number}",
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(24.0)),
+                      fontSize: ScreenUtil().setSp(24.0)),
                 ),
               ],
             ),
@@ -349,7 +349,7 @@ class _OrderDetailState extends State<OrderDetail> {
               Strings.TIPS,
               style: TextStyle(
                   color: Colors.black54,
-                  fontSize: ScreenUtil.instance.setSp(28.0)),
+                  fontSize: ScreenUtil().setSp(28.0)),
             ),
             content: Text(
               action == 1
@@ -357,7 +357,7 @@ class _OrderDetailState extends State<OrderDetail> {
                   : Strings.MINE_ORDER_DELETE_TIPS,
               style: TextStyle(
                   color: Colors.black54,
-                  fontSize: ScreenUtil.instance.setSp(28.0)),
+                  fontSize: ScreenUtil().setSp(28.0)),
             ),
             actions: <Widget>[
               FlatButton(
@@ -369,7 +369,7 @@ class _OrderDetailState extends State<OrderDetail> {
                     Strings.CANCEL,
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize: ScreenUtil.instance.setSp(24.0)),
+                        fontSize: ScreenUtil().setSp(24.0)),
                   )),
               FlatButton(
                   color: Colors.white,
@@ -385,7 +385,7 @@ class _OrderDetailState extends State<OrderDetail> {
                     Strings.CONFIRM,
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize: ScreenUtil.instance.setSp(24.0)),
+                        fontSize: ScreenUtil().setSp(24.0)),
                   )),
             ],
           );

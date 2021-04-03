@@ -13,7 +13,7 @@ class _LoadingDialogState extends State<LoadingDialog> {
     return Container(
       child: Center(
         child: SpinKitFoldingCube(
-          size: ScreenUtil.instance.setWidth(60.0),
+          size: ScreenUtil().setWidth(60.0),
           color: Colors.deepOrangeAccent,
         ),
       ),

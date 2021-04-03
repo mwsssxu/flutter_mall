@@ -31,9 +31,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    SharedPreferencesUtils.getToken().then((token){
-
-    });
+    SharedPreferencesUtils.getToken().then((token) {});
     _queryHomeData();
   }
 
@@ -55,7 +53,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+    // ScreenUtil() = ScreenUtil(width: 750, height: 1334)..init(context);
+    // 初始化
+    ScreenUtil.init(
+      // 设备像素大小(必须在首页中获取)
+      BoxConstraints(
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.height,
+      ),
+      // 设计尺寸
+      designSize: Size(750, 1334),
+      allowFontScaling: false,
+    );
     return Scaffold(
         //key: ObjectKey("home"),
         appBar: AppBar(
@@ -85,57 +94,58 @@ class _HomePageState extends State<HomePage> {
               enableControlFinishLoad: false,
               child: SingleChildScrollView(
                   child: Column(
-                children: <Widget>[
-                  SwiperView(_homeEntity.banner, _homeEntity.banner.length,
-                      ScreenUtil.instance.setHeight(360.0)),
-                  Padding(
-                    padding: EdgeInsets.only(top: 10.0),
-                  ),
-                  CategoryMenu(_homeEntity.channel),
-                  Container(
-                    height: 40.0,
-                    alignment: Alignment.center,
-                    child: Text(Strings.COUPON_AREA),
-                  ),
-                  CouponView(_homeEntity.couponList),
-                  Container(
-                    height: 40.0,
-                    alignment: Alignment.center,
-                    child: Text(Strings.GROUP_BUG),
-                  ),
-                  GroupBuyView(_homeEntity.grouponList),
-                  Container(
-                    height: 40.0,
-                    alignment: Alignment.center,
-                    child: Text(Strings.BRAND),
-                  ),
-                  BrandView(_homeEntity.brandList),
-                  Container(
-                    height: 40.0,
-                    alignment: Alignment.center,
-                    child: Text(Strings.NEW_PRODUCT),
-                  ),
-                  ProductView(_homeEntity.newGoodsList),
-                  Container(
-                    height: 40.0,
-                    alignment: Alignment.center,
-                    child: Text(Strings.PROJECT_SELECTIONS),
-                  ),
-                  ProjectSelectionView(_homeEntity.topicList),
-                  Container(
-                    height: 40.0,
-                    alignment: Alignment.center,
-                    child: Text(Strings.HOT_PRODUCT),
-                  ),
-                  ProductView(_homeEntity.hotGoodsList),
-                  ListView.builder(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: _homeEntity.floorGoodsList.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return _floorGoodsWidget(_homeEntity.floorGoodsList[index]);
-                      })
-                ],
+                    children: <Widget>[
+                      SwiperView(_homeEntity.banner, _homeEntity.banner.length,
+                          ScreenUtil().setHeight(360.0)),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10.0),
+                      ),
+                      CategoryMenu(_homeEntity.channel),
+                      Container(
+                        height: 40.0,
+                        alignment: Alignment.center,
+                        child: Text(Strings.COUPON_AREA),
+                      ),
+                      CouponView(_homeEntity.couponList),
+                      Container(
+                        height: 40.0,
+                        alignment: Alignment.center,
+                        child: Text(Strings.GROUP_BUG),
+                      ),
+                      GroupBuyView(_homeEntity.grouponList),
+                      Container(
+                        height: 40.0,
+                        alignment: Alignment.center,
+                        child: Text(Strings.BRAND),
+                      ),
+                      BrandView(_homeEntity.brandList),
+                      Container(
+                        height: 40.0,
+                        alignment: Alignment.center,
+                        child: Text(Strings.NEW_PRODUCT),
+                      ),
+                      ProductView(_homeEntity.newGoodsList),
+                      Container(
+                        height: 40.0,
+                        alignment: Alignment.center,
+                        child: Text(Strings.PROJECT_SELECTIONS),
+                      ),
+                      ProjectSelectionView(_homeEntity.topicList),
+                      Container(
+                        height: 40.0,
+                        alignment: Alignment.center,
+                        child: Text(Strings.HOT_PRODUCT),
+                      ),
+                      ProductView(_homeEntity.hotGoodsList),
+                      ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: _homeEntity.floorGoodsList.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return _floorGoodsWidget(
+                                _homeEntity.floorGoodsList[index]);
+                          })
+                    ],
               )),
               onRefresh: () async {
                 _queryHomeData();

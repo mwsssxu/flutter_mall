@@ -8,9 +8,9 @@ class ToastUtil {
         msg: message,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
-        timeInSecForIos: 1,
+        // timeInSecForIos: 1,
         backgroundColor: Colors.deepOrangeAccent,
         textColor: Colors.white,
-        fontSize: ScreenUtil.instance.setSp(28.0));
+        fontSize: ScreenUtil().setSp(28.0));
   }
 }

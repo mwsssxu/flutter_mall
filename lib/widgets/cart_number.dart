@@ -38,14 +38,14 @@ class _CartNumberViewState extends State<CartNumberView> {
     print("CartNumberView");
     _listener();
     return Container(
-      width: ScreenUtil.instance.setWidth(150),
-      height: ScreenUtil.instance.setWidth(50),
+      width: ScreenUtil().setWidth(150),
+      height: ScreenUtil().setWidth(50),
       child: Row(
         children: <Widget>[
           InkWell(
               onTap: () => _reduce(),
               child: Container(
-                width: ScreenUtil.instance.setWidth(50),
+                width: ScreenUtil().setWidth(50),
                 height: double.infinity,
                 alignment: Alignment.center,
                 decoration: ShapeDecoration(
@@ -58,13 +58,13 @@ class _CartNumberViewState extends State<CartNumberView> {
                   "-",
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                 ),
               )),
           Container(
             alignment: Alignment.center,
             height: double.infinity,
-            width: ScreenUtil.instance.setWidth(50),
+            width: ScreenUtil().setWidth(50),
             decoration: ShapeDecoration(
                 shape: Border(
                     top: BorderSide(color: Colors.grey, width: 1.0),
@@ -73,14 +73,14 @@ class _CartNumberViewState extends State<CartNumberView> {
               "${goodsNumber}",
               style: TextStyle(
                   color: Colors.black54,
-                  fontSize: ScreenUtil.instance.setSp(26.0)),
+                  fontSize: ScreenUtil().setSp(26.0)),
             ),
           ),
           InkWell(
               onTap: () => _add(),
               child: Container(
                 alignment: Alignment.center,
-                width: ScreenUtil.instance.setWidth(50),
+                width: ScreenUtil().setWidth(50),
                 height: double.infinity,
                 decoration: ShapeDecoration(
                     shape: Border(
@@ -92,7 +92,7 @@ class _CartNumberViewState extends State<CartNumberView> {
                   "+",
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                 ),
               )),
         ],

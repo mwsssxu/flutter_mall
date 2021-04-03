@@ -97,7 +97,7 @@ class _GoodsListState extends State<GoodsList> {
                 children: <Widget>[
                   CachedImageView(
                     double.infinity,
-                    ScreenUtil.getInstance().setHeight(200.0),
+                    ScreenUtil().setHeight(200.0),
                     goodsEntity.picUrl,
                   ),
                   Padding(

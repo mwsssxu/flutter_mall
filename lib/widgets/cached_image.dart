@@ -30,7 +30,7 @@ class CachedImageView extends StatelessWidget {
             child: Text(
               Strings.LOADING,
               style: TextStyle(
-                  fontSize: ScreenUtil.instance.setSp(26.0),
+                  fontSize: ScreenUtil().setSp(26.0),
                   color: Colors.white),
             ),
           );

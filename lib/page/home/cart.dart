@@ -92,7 +92,7 @@ class _CartViewState extends State<CartView> {
                                 return _getCartItemView(index);
                               }),
                           Container(
-                            height: ScreenUtil.getInstance().setHeight(120.0),
+                            height: ScreenUtil().setHeight(120.0),
                             decoration: ShapeDecoration(
                                 shape: Border(
                                     top: BorderSide(
@@ -108,14 +108,14 @@ class _CartViewState extends State<CartView> {
                                     }),
                                 Container(
                                   width:
-                                      ScreenUtil.getInstance().setWidth(200.0),
+                                      ScreenUtil().setWidth(200.0),
                                   child: Text(Strings.TOTAL_MONEY +
                                       "${cartListEntity.cartTotal.checkedGoodsAmount}"),
                                 ),
                                 Expanded(
                                     child: Container(
                                   margin: EdgeInsets.only(
-                                      right: ScreenUtil.getInstance()
+                                      right: ScreenUtil()
                                           .setWidth(30.0)),
                                   alignment: Alignment.centerRight,
                                   child: RaisedButton(
@@ -127,7 +127,7 @@ class _CartViewState extends State<CartView> {
                                       Strings.SETTLEMENT,
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: ScreenUtil.getInstance()
+                                          fontSize: ScreenUtil()
                                               .setSp(26.0)),
                                     ),
                                   ),
@@ -170,7 +170,7 @@ class _CartViewState extends State<CartView> {
                       Strings.LOGIN,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                          fontSize: ScreenUtil().setSp(30.0)),
                     ),
                   ),
                 ),
@@ -188,7 +188,7 @@ class _CartViewState extends State<CartView> {
     print("_getCartItemView${index}");
 
     return Container(
-      height: ScreenUtil.getInstance().setHeight(180.0),
+      height: ScreenUtil().setHeight(180.0),
       width: double.infinity,
       child: InkWell(
         onLongPress: () => _deleteDialog(index),
@@ -203,8 +203,8 @@ class _CartViewState extends State<CartView> {
                     _checkCart(index, bool);
                   }),
               CachedImageView(
-                  ScreenUtil.getInstance().setWidth(140.0),
-                  ScreenUtil.getInstance().setWidth(140.0),
+                  ScreenUtil().setWidth(140.0),
+                  ScreenUtil().setWidth(140.0),
                   _cartList[index].picUrl),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -213,16 +213,16 @@ class _CartViewState extends State<CartView> {
                   Text(
                     _cartList[index].goodsName,
                     style: TextStyle(
-                        fontSize: ScreenUtil.getInstance().setSp(24.0),
+                        fontSize: ScreenUtil().setSp(24.0),
                         color: Colors.black54),
                   ),
                   Padding(
                       padding: EdgeInsets.only(
-                          top: ScreenUtil.getInstance().setHeight(10.0))),
+                          top: ScreenUtil().setHeight(10.0))),
                   Text(
                     "¥${_cartList[index].price}",
                     style: TextStyle(
-                        fontSize: ScreenUtil.getInstance().setSp(24.0),
+                        fontSize: ScreenUtil().setSp(24.0),
                         color: Colors.grey),
                   )
                 ],
@@ -230,7 +230,7 @@ class _CartViewState extends State<CartView> {
               Expanded(
                   child: Container(
                 padding: EdgeInsets.only(
-                    right: ScreenUtil.getInstance().setWidth(20.0)),
+                    right: ScreenUtil().setWidth(20.0)),
                 alignment: Alignment.centerRight,
                 child: CartNumberView(_cartList[index].number, (value) {
                   _updateCart(index, value);

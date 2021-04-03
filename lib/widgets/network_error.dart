@@ -22,17 +22,17 @@ class NetWorkErrorView extends StatelessWidget {
             children: <Widget>[
               Image.asset(
                 "images/network_error.png",
-                height: ScreenUtil.instance.setWidth(120.0),
-                width: ScreenUtil.instance.setWidth(120.0),
+                height: ScreenUtil().setWidth(120.0),
+                width: ScreenUtil().setWidth(120.0),
               ),
               Padding(
                 padding:
-                    EdgeInsets.only(top: ScreenUtil.instance.setHeight(20.0)),
+                    EdgeInsets.only(top: ScreenUtil().setHeight(20.0)),
               ),
               Text(
                 Strings.NO_DATA_TEXT,
                 style: TextStyle(
-                    fontSize: ScreenUtil.instance.setSp(28.0),
+                    fontSize: ScreenUtil().setSp(28.0),
                     color: Colors.deepOrangeAccent),
               )
             ],

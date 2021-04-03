@@ -88,8 +88,8 @@ class _EditAddressViewState extends State<EditAddressView> {
       ),
       body: Container(
         padding: EdgeInsets.only(
-            left: ScreenUtil.instance.setWidth(20.0),
-            right: ScreenUtil.instance.setWidth(20.0)),
+            left: ScreenUtil().setWidth(20.0),
+            right: ScreenUtil().setWidth(20.0)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -98,44 +98,44 @@ class _EditAddressViewState extends State<EditAddressView> {
                 controller: _nameController,
                 style: TextStyle(
                     color: Colors.black54,
-                    fontSize: ScreenUtil.instance.setSp(26.0)),
+                    fontSize: ScreenUtil().setSp(26.0)),
                 decoration: InputDecoration(
                     hintText: Strings.ADDRESS_PLEASE_INPUT_NAME,
                     hintStyle: TextStyle(
                         color: Colors.grey,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                     focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent)),
                     enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent)))),
             Divider(
               color: Colors.grey[350],
-              height: ScreenUtil.instance.setHeight(1.0),
+              height: ScreenUtil().setHeight(1.0),
             ),
             TextField(
                 maxLines: 1,
                 controller: _phoneController,
                 style: TextStyle(
                     color: Colors.black54,
-                    fontSize: ScreenUtil.instance.setSp(26.0)),
+                    fontSize: ScreenUtil().setSp(26.0)),
                 decoration: InputDecoration(
                     hintText: Strings.ADDRESS_PLEASE_INPUT_PHONE,
                     hintStyle: TextStyle(
                         color: Colors.grey,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                     focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent)),
                     enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent)))),
             Divider(
               color: Colors.grey[350],
-              height: ScreenUtil.instance.setHeight(1.0),
+              height: ScreenUtil().setHeight(1.0),
             ),
             InkWell(
                 onTap: () => this.show(context),
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  height: ScreenUtil.instance.setHeight(100),
+                  height: ScreenUtil().setHeight(100),
                   child: Text(
                     _cityText == null
                         ? Strings.ADDRESS_PLEASE_SELECT_CITY
@@ -143,37 +143,37 @@ class _EditAddressViewState extends State<EditAddressView> {
                     style: _cityText == null
                         ? TextStyle(
                             color: Colors.grey,
-                            fontSize: ScreenUtil.instance.setSp(26.0))
+                            fontSize: ScreenUtil().setSp(26.0))
                         : TextStyle(
                             color: Colors.black54,
-                            fontSize: ScreenUtil.instance.setSp(26.0)),
+                            fontSize: ScreenUtil().setSp(26.0)),
                   ),
                 )),
             Divider(
               color: Colors.grey[350],
-              height: ScreenUtil.instance.setHeight(1.0),
+              height: ScreenUtil().setHeight(1.0),
             ),
             TextField(
                 maxLines: 1,
                 controller: _addressDetailController,
                 style: TextStyle(
                     color: Colors.black54,
-                    fontSize: ScreenUtil.instance.setSp(26.0)),
+                    fontSize: ScreenUtil().setSp(26.0)),
                 decoration: InputDecoration(
                     hintText: Strings.ADDRESS_PLEASE_INPUT_DETAIL,
                     hintStyle: TextStyle(
                         color: Colors.grey,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                     focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent)),
                     enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent)))),
             Divider(
               color: Colors.grey[350],
-              height: ScreenUtil.instance.setHeight(1.0),
+              height: ScreenUtil().setHeight(1.0),
             ),
             Container(
-              height: ScreenUtil.instance.setHeight(100.0),
+              height: ScreenUtil().setHeight(100.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -181,7 +181,7 @@ class _EditAddressViewState extends State<EditAddressView> {
                     Strings.ADDRESS_SET_DEFAULT,
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                   ),
                   Expanded(
                       child: Container(
@@ -200,7 +200,7 @@ class _EditAddressViewState extends State<EditAddressView> {
             ),
             Divider(
               color: Colors.grey[350],
-              height: ScreenUtil.instance.setHeight(1.0),
+              height: ScreenUtil().setHeight(1.0),
             ),
             Offstage(
               offstage: _addressId == 0,
@@ -208,12 +208,12 @@ class _EditAddressViewState extends State<EditAddressView> {
                   onTap: () => _delete(context),
                   child: Container(
                     alignment: Alignment.centerLeft,
-                    height: ScreenUtil.instance.setHeight(100),
+                    height: ScreenUtil().setHeight(100),
                     child: Text(
                       Strings.ADDRESS_DELETE,
                       style: TextStyle(
                           color: Colors.deepOrangeAccent,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                     ),
                   )),
             ),
@@ -221,7 +221,7 @@ class _EditAddressViewState extends State<EditAddressView> {
                 offstage: _addressId == 0,
                 child: Divider(
                   color: Colors.grey[350],
-                  height: ScreenUtil.instance.setHeight(1.0),
+                  height: ScreenUtil().setHeight(1.0),
                 )),
           ],
         ),
@@ -231,14 +231,14 @@ class _EditAddressViewState extends State<EditAddressView> {
             alignment: Alignment.center,
             width: double.infinity,
             color: Colors.deepOrangeAccent,
-            height: ScreenUtil.instance.setHeight(100.0),
+            height: ScreenUtil().setHeight(100.0),
             child: InkWell(
               onTap: () => _submit(),
               child: Text(
                 Strings.SUBMIT,
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: ScreenUtil.instance.setSp(28.0)),
+                    fontSize: ScreenUtil().setSp(28.0)),
               ),
             )),
       ),
@@ -248,14 +248,14 @@ class _EditAddressViewState extends State<EditAddressView> {
   show(context) async {
     Result temp = await CityPickers.showCityPicker(
       context: context,
-      itemExtent: ScreenUtil.instance.setHeight(80.0),
+      itemExtent: ScreenUtil().setHeight(80.0),
       itemBuilder: (item, list, index) {
         return Center(
             child: Text(item,
                 maxLines: 1,
-                style: TextStyle(fontSize: ScreenUtil.instance.setSp(26.0))));
+                style: TextStyle(fontSize: ScreenUtil().setSp(26.0))));
       },
-      height: ScreenUtil.instance.setHeight(400),
+      height: ScreenUtil().setHeight(400),
     );
 
     print(temp);
@@ -277,13 +277,13 @@ class _EditAddressViewState extends State<EditAddressView> {
             title: Text(
               Strings.TIPS,
               style: TextStyle(
-                  fontSize: ScreenUtil.instance.setSp(30.0),
+                  fontSize: ScreenUtil().setSp(30.0),
                   color: Colors.black54),
             ),
             content: Text(
               Strings.ADDRESS_DELETE,
               style: TextStyle(
-                  fontSize: ScreenUtil.instance.setSp(30.0),
+                  fontSize: ScreenUtil().setSp(30.0),
                   color: Colors.black54),
             ),
             actions: <Widget>[
@@ -296,7 +296,7 @@ class _EditAddressViewState extends State<EditAddressView> {
                   Strings.CANCEL,
                   style: TextStyle(
                       color: Colors.deepOrangeAccent,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                 ),
               ),
               FlatButton(
@@ -309,7 +309,7 @@ class _EditAddressViewState extends State<EditAddressView> {
                   Strings.CONFIRM,
                   style: TextStyle(
                       color: Colors.deepOrangeAccent,
-                      fontSize: ScreenUtil.instance.setSp(26.0)),
+                      fontSize: ScreenUtil().setSp(26.0)),
                 ),
               ),
             ],

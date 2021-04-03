@@ -34,15 +34,15 @@ class _LoginViewState extends State<LoginView> {
                 child: SingleChildScrollView(
               child: Container(
                 margin: EdgeInsets.fromLTRB(ScreenUtil().setWidth(30.0), 0, ScreenUtil().setWidth(30.0), 0),
-                height: ScreenUtil.instance.setHeight(800.0),
+                height: ScreenUtil().setHeight(800.0),
                 decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
                 child: Form(
                   key: registerFormKey,
                   child: Column(
                     children: <Widget>[
-                      Padding(padding: EdgeInsets.only(top: ScreenUtil.instance.setHeight(60.0))),
+                      Padding(padding: EdgeInsets.only(top: ScreenUtil().setHeight(60.0))),
                       Container(
-                        margin: EdgeInsets.all(ScreenUtil.instance.setWidth(30.0)),
+                        margin: EdgeInsets.all(ScreenUtil().setWidth(30.0)),
                         child: TextFormField(
                           maxLines: 1,
                           maxLength: 11,
@@ -53,18 +53,18 @@ class _LoginViewState extends State<LoginView> {
                             icon: Icon(
                               Icons.account_circle,
                               color: Colors.deepOrangeAccent,
-                              size: ScreenUtil.instance.setWidth(60.0),
+                              size: ScreenUtil().setWidth(60.0),
                             ),
                             hintText: Strings.ACCOUNT_HINT,
-                            hintStyle: TextStyle(color: Colors.grey, fontSize: ScreenUtil.instance.setSp(28.0)),
-                            labelStyle: TextStyle(color: Colors.black54, fontSize: ScreenUtil.instance.setSp(28.0)),
+                            hintStyle: TextStyle(color: Colors.grey, fontSize: ScreenUtil().setSp(28.0)),
+                            labelStyle: TextStyle(color: Colors.black54, fontSize: ScreenUtil().setSp(28.0)),
                             labelText: Strings.ACCOUNT,
                           ),
                           controller: _accountTextControl,
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.all(ScreenUtil.instance.setWidth(30.0)),
+                        margin: EdgeInsets.all(ScreenUtil().setWidth(30.0)),
                         child: TextFormField(
                           maxLines: 1,
                           maxLength: 12,
@@ -75,38 +75,38 @@ class _LoginViewState extends State<LoginView> {
                             icon: Icon(
                               MallIcon.PASS_WORD,
                               color: Colors.deepOrangeAccent,
-                              size: ScreenUtil.instance.setWidth(60.0),
+                              size: ScreenUtil().setWidth(60.0),
                             ),
                             hintText: Strings.PASSWORD_HINT,
-                            hintStyle: TextStyle(color: Colors.grey, fontSize: ScreenUtil.instance.setSp(28.0)),
-                            labelStyle: TextStyle(color: Colors.black54, fontSize: ScreenUtil.instance.setSp(28.0)),
+                            hintStyle: TextStyle(color: Colors.grey, fontSize: ScreenUtil().setSp(28.0)),
+                            labelStyle: TextStyle(color: Colors.black54, fontSize: ScreenUtil().setSp(28.0)),
                             labelText: Strings.PASSWORD,
                           ),
                           controller: _passwordTextControl,
                         ),
                       ),
                       Container(
-                          margin: EdgeInsets.all(ScreenUtil.instance.setWidth(30.0)),
+                          margin: EdgeInsets.all(ScreenUtil().setWidth(30.0)),
                           child: SizedBox(
-                            height: ScreenUtil.instance.setHeight(80.0),
-                            width: ScreenUtil.instance.setWidth(600.0),
+                            height: ScreenUtil().setHeight(80.0),
+                            width: ScreenUtil().setWidth(600.0),
                             child: RaisedButton(
                               onPressed: _login,
                               color: Colors.deepOrangeAccent,
                               child: Text(
                                 Strings.LOGIN,
-                                style: TextStyle(color: Colors.white, fontSize: ScreenUtil.instance.setSp(28.0)),
+                                style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(28.0)),
                               ),
                             ),
                           )),
                       Container(
-                        margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+                        margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
                         alignment: Alignment.centerRight,
                         child: InkWell(
                           onTap: () => _register(),
                           child: Text(
                             Strings.NOW_REGISTER,
-                            style: TextStyle(color: Colors.deepOrangeAccent, fontSize: ScreenUtil.instance.setSp(24.0)),
+                            style: TextStyle(color: Colors.deepOrangeAccent, fontSize: ScreenUtil().setSp(24.0)),
                           ),
                         ),
                       )
@@ -168,10 +168,10 @@ class _LoginViewState extends State<LoginView> {
         msg: message,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
-        timeInSecForIos: 1,
+        // timeInSecForIos: 1,
         backgroundColor: Colors.deepOrangeAccent,
         textColor: Colors.white,
-        fontSize: ScreenUtil.instance.setSp(28.0));
+        fontSize: ScreenUtil().setSp(28.0));
   }
 
   _saveUserInfo() async {

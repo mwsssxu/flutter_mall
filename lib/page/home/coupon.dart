@@ -27,26 +27,26 @@ class CouponView extends StatelessWidget {
 
   Widget _getCouponView(CouponList couponEntity) {
     return Container(
-        height: ScreenUtil.instance.setHeight(200.0),
+        height: ScreenUtil().setHeight(200.0),
         child: InkWell(
           onTap: () => _recevieCoupon(couponEntity.id),
           child: Card(
-            margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+            margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
             child: Row(
               children: <Widget>[
                 Container(
                   alignment: Alignment.center,
-                  width: ScreenUtil.instance.setWidth(200.0),
+                  width: ScreenUtil().setWidth(200.0),
                   child: Text(
                     "${couponEntity.discount}元",
                     style: TextStyle(
-                        fontSize: ScreenUtil.instance.setSp(26.0),
+                        fontSize: ScreenUtil().setSp(26.0),
                         color: Colors.grey),
                   ),
                 ),
                 Divider(
                   color: Colors.grey,
-                  height: ScreenUtil.instance.setHeight(200.0),
+                  height: ScreenUtil().setHeight(200.0),
                 ),
                 Expanded(
                   child: Container(
@@ -56,12 +56,12 @@ class CouponView extends StatelessWidget {
                         Text(couponEntity.name),
                         Padding(
                           padding: EdgeInsets.only(
-                              top: ScreenUtil.instance.setWidth(10.0)),
+                              top: ScreenUtil().setWidth(10.0)),
                         ),
                         Text("满${couponEntity.min}使用"),
                         Padding(
                           padding: EdgeInsets.only(
-                              top: ScreenUtil.instance.setWidth(10.0)),
+                              top: ScreenUtil().setWidth(10.0)),
                         ),
                         Text("有效期${couponEntity.days}天"),
                       ],

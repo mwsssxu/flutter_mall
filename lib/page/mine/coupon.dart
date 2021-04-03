@@ -50,7 +50,7 @@ class _CouponViewState extends State<CouponView> {
         centerTitle: true,
       ),
       body: Container(
-        margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+        margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
         child: ListView.builder(
             itemCount: _couponList.length,
             itemBuilder: (BuildContext context, int index) {
@@ -62,26 +62,26 @@ class _CouponViewState extends State<CouponView> {
 
   Widget _couponItemView(ListData coupon) {
     return Container(
-        height: ScreenUtil.instance.setHeight(190.0),
+        height: ScreenUtil().setHeight(190.0),
         margin: EdgeInsets.only(
-          top: ScreenUtil.instance.setHeight(10.0),
+          top: ScreenUtil().setHeight(10.0),
         ),
         child: Card(
-          margin: EdgeInsets.all(ScreenUtil.instance.setWidth(10.0)),
+          margin: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
          child: Container(
-           padding: EdgeInsets.all(ScreenUtil.instance.setWidth(10.0)),
+           padding: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
            child: Row(
              crossAxisAlignment: CrossAxisAlignment.center,
              mainAxisAlignment: MainAxisAlignment.start,
              children: <Widget>[
                Icon(
                  MallIcon.COUPON,
-                 size: ScreenUtil.instance.setWidth(100),
+                 size: ScreenUtil().setWidth(100),
                  color: Colors.deepOrangeAccent,
                ),
                Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(left: ScreenUtil.instance.setWidth(30.0)),
+                    padding: EdgeInsets.only(left: ScreenUtil().setWidth(30.0)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -92,12 +92,12 @@ class _CouponViewState extends State<CouponView> {
                               Text(
                                 "${coupon.discount}" + Strings.unit,
                                 style: TextStyle(
-                                    fontSize: ScreenUtil.instance.setSp(30.0),
+                                    fontSize: ScreenUtil().setSp(30.0),
                                     color: Colors.deepOrangeAccent),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(
-                                    left: ScreenUtil.instance.setWidth(10.0)),
+                                    left: ScreenUtil().setWidth(10.0)),
                               ),
                               Text(
                                 Strings.FULL +
@@ -105,28 +105,28 @@ class _CouponViewState extends State<CouponView> {
                                     Strings.REDUCE +
                                     "${coupon.discount}",
                                 style: TextStyle(
-                                    fontSize: ScreenUtil.instance.setSp(24.0),
+                                    fontSize: ScreenUtil().setSp(24.0),
                                     color: Colors.deepOrangeAccent),
                               )
                             ],
                           ),
                           Padding(
                               padding: EdgeInsets.only(
-                                  top: ScreenUtil.instance.setHeight(10.0))),
+                                  top: ScreenUtil().setHeight(10.0))),
                           Text(
                             coupon.name + coupon.desc,
                             style: TextStyle(
                                 color: Colors.black54,
-                                fontSize: ScreenUtil.instance.setSp(26.0)),
+                                fontSize: ScreenUtil().setSp(26.0)),
                           ),
                           Padding(
                               padding: EdgeInsets.only(
-                                  top: ScreenUtil.instance.setHeight(10.0))),
+                                  top: ScreenUtil().setHeight(10.0))),
                           Text(
                             coupon.startTime + "-" + coupon.endTime,
                             style: TextStyle(
                                 color: Colors.black54,
-                                fontSize: ScreenUtil.instance.setSp(26.0)),
+                                fontSize: ScreenUtil().setSp(26.0)),
                           ),
                         ],
                       ))

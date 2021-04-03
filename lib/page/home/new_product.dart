@@ -42,8 +42,8 @@ class ProductView extends StatelessWidget {
               Container(
                   margin: EdgeInsets.all(5.0),
                   child: CachedImageView(
-                      ScreenUtil.instance.setHeight(200.0),
-                      ScreenUtil.instance.setHeight(200.0),
+                      ScreenUtil().setHeight(200.0),
+                      ScreenUtil().setHeight(200.0),
                       productEntity.picUrl)),
               Padding(
                 padding: EdgeInsets.only(top: 4.0),

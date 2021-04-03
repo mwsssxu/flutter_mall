@@ -41,7 +41,7 @@ class _AddressViewState extends State<AddressView> {
         actions: <Widget>[
           InkWell(
               child: Container(
-            margin: EdgeInsets.only(right: ScreenUtil.instance.setWidth(10.0)),
+            margin: EdgeInsets.only(right: ScreenUtil().setWidth(10.0)),
             alignment: Alignment.center,
             child: InkWell(
               onTap: () => _goAddressEdit(0),
@@ -63,8 +63,8 @@ class _AddressViewState extends State<AddressView> {
 
   Widget _addressItemView(ListData addressData) {
     return Container(
-      padding: EdgeInsets.only(left: ScreenUtil.instance.setWidth(10.0)),
-      height: ScreenUtil.instance.setHeight(160.0),
+      padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0)),
+      height: ScreenUtil().setHeight(160.0),
       alignment: Alignment.center,
       child: Card(
           child: InkWell(
@@ -74,21 +74,21 @@ class _AddressViewState extends State<AddressView> {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(
-                  right: ScreenUtil.instance.setWidth(10.0),
-                  left: ScreenUtil.instance.setWidth(10.0)),
+                  right: ScreenUtil().setWidth(10.0),
+                  left: ScreenUtil().setWidth(10.0)),
               child: ClipRRect(
                 borderRadius:
-                    BorderRadius.circular(ScreenUtil.instance.setWidth(40)),
+                    BorderRadius.circular(ScreenUtil().setWidth(40)),
                 child: Container(
                   alignment: Alignment.center,
                   color: Colors.grey,
-                  width: ScreenUtil.instance.setWidth(80),
-                  height: ScreenUtil.instance.setHeight(80),
+                  width: ScreenUtil().setWidth(80),
+                  height: ScreenUtil().setHeight(80),
                   child: Text(
                     addressData.name.substring(0, 1),
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: ScreenUtil.instance.setSp(40)),
+                        fontSize: ScreenUtil().setSp(40)),
                   ),
                 ),
               ),
@@ -104,22 +104,22 @@ class _AddressViewState extends State<AddressView> {
                       addressData.name,
                       style: TextStyle(
                           color: Colors.black54,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                     ),
                     Padding(
                         padding: EdgeInsets.only(
-                            left: ScreenUtil.instance.setWidth(10.0))),
+                            left: ScreenUtil().setWidth(10.0))),
                     Text(
                       addressData.tel,
                       style: TextStyle(
                           color: Colors.grey,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                     ),
                   ],
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setWidth(20.0))),
+                        top: ScreenUtil().setWidth(20.0))),
                 Text(
                   addressData.province +
                       addressData.city +
@@ -129,30 +129,30 @@ class _AddressViewState extends State<AddressView> {
                   overflow: TextOverflow.ellipsis, // 显示不完，就在后面显示点点
                   style: TextStyle(
                     color: Colors.black54,
-                    fontSize: ScreenUtil.instance.setSp(26.0),
+                    fontSize: ScreenUtil().setSp(26.0),
                   ),
                 )
               ],
             )),
             Container(
-                width: ScreenUtil.instance.setWidth(120.0),
+                width: ScreenUtil().setWidth(120.0),
                 margin:
-                    EdgeInsets.only(right: ScreenUtil.instance.setWidth(10.0)),
+                    EdgeInsets.only(right: ScreenUtil().setWidth(10.0)),
                 alignment: Alignment.center,
                 decoration: ShapeDecoration(
                     shape: Border(
                         left: BorderSide(
                             color: Colors.grey[350],
-                            width: ScreenUtil.instance.setWidth(1.0)))),
+                            width: ScreenUtil().setWidth(1.0)))),
                 padding:
-                    EdgeInsets.only(left: ScreenUtil.instance.setWidth(10.0)),
+                    EdgeInsets.only(left: ScreenUtil().setWidth(10.0)),
                 child: InkWell(
                   onTap: () => _goAddressEdit(addressData.id),
                   child: Text(
                     Strings.ADDRESS_EDIT,
                     style: TextStyle(
                         color: Colors.grey,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                   ),
                 ))
           ],

@@ -78,13 +78,13 @@ class _ProjectSelectionDetailViewState
                 .replaceAll("//", "http://")),
         Padding(
           padding:
-          EdgeInsets.only(top: ScreenUtil.instance.setHeight(10.0)),
+          EdgeInsets.only(top: ScreenUtil().setHeight(10.0)),
         ),
         GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: ScreenUtil.instance.setHeight(10.0),
-                crossAxisSpacing: ScreenUtil.instance.setWidth(10.0),
+                mainAxisSpacing: ScreenUtil().setHeight(10.0),
+                crossAxisSpacing: ScreenUtil().setWidth(10.0),
                 childAspectRatio: 0.9),
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -100,7 +100,7 @@ class _ProjectSelectionDetailViewState
             Strings.RECOMMEND_PROJECT_SELECTION,
             style: TextStyle(
                 color: Colors.black54,
-                fontSize: ScreenUtil.instance.setSp(26.0)),
+                fontSize: ScreenUtil().setSp(26.0)),
           ),
         ),
         ListView.builder(
@@ -136,8 +136,8 @@ class _ProjectSelectionDetailViewState
               Container(
                 margin: EdgeInsets.all(5.0),
                 child: CachedImageView(
-                    ScreenUtil.getInstance().setHeight(200.0),
-                    ScreenUtil.getInstance().setHeight(200.0),
+                    ScreenUtil().setHeight(200.0),
+                    ScreenUtil().setHeight(200.0),
                     productEntity.picUrl),
               ),
               Padding(
@@ -173,7 +173,7 @@ class _ProjectSelectionDetailViewState
 
   Widget _itemView(Recommed recommend) {
     return Container(
-      width: ScreenUtil.instance.setWidth(600.0),
+      width: ScreenUtil().setWidth(600.0),
       child: Card(
         child: InkWell(
           onTap: () => _goDetail(recommend.id),
@@ -183,46 +183,46 @@ class _ProjectSelectionDetailViewState
               Container(
                   width: double.infinity,
                   child: CachedImageView(double.infinity,
-                      ScreenUtil.instance.setHeight(260.0), recommend.picUrl)),
+                      ScreenUtil().setHeight(260.0), recommend.picUrl)),
               Padding(
                   padding: EdgeInsets.only(
-                      top: ScreenUtil.instance.setHeight(10.0))),
+                      top: ScreenUtil().setHeight(10.0))),
               Container(
                   padding:
-                  EdgeInsets.only(left: ScreenUtil.instance.setWidth(10.0)),
+                  EdgeInsets.only(left: ScreenUtil().setWidth(10.0)),
                   child: Text(
                     recommend.title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                   )),
               Padding(
                   padding:
-                  EdgeInsets.only(top: ScreenUtil.instance.setHeight(6.0))),
+                  EdgeInsets.only(top: ScreenUtil().setHeight(6.0))),
               Container(
                   padding:
-                  EdgeInsets.only(left: ScreenUtil.instance.setWidth(10.0)),
+                  EdgeInsets.only(left: ScreenUtil().setWidth(10.0)),
                   child: Text(
                     recommend.subtitle,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                   )),
               Padding(
                   padding:
-                  EdgeInsets.only(top: ScreenUtil.instance.setHeight(6.0))),
+                  EdgeInsets.only(top: ScreenUtil().setHeight(6.0))),
               Container(
                   padding:
-                  EdgeInsets.only(left: ScreenUtil.instance.setWidth(10.0)),
+                  EdgeInsets.only(left: ScreenUtil().setWidth(10.0)),
                   child: Text(
                     Strings.DOLLAR + "${recommend.price}",
                     style: TextStyle(
                         color: Colors.deepOrangeAccent,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                   )),
             ],
           ),

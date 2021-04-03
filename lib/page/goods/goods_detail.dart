@@ -163,19 +163,19 @@ class _GoodsDetailState extends State<GoodsDetail> {
         builder: (BuildContext context) {
           return SizedBox(
             width: double.infinity,
-            height: ScreenUtil.instance.setHeight(630.0),
+            height: ScreenUtil().setHeight(630.0),
             child: Container(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+                    margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         CachedImageView(
-                            ScreenUtil.instance.setWidth(120.0),
-                            ScreenUtil.instance.setWidth(120.0),
+                            ScreenUtil().setWidth(120.0),
+                            ScreenUtil().setWidth(120.0),
                             productList.url),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -184,11 +184,11 @@ class _GoodsDetailState extends State<GoodsDetail> {
                               Strings.PRICE + "：" + "${productList.price}",
                               style: TextStyle(
                                   color: Colors.black54,
-                                  fontSize: ScreenUtil.instance.setSp(24.0)),
+                                  fontSize: ScreenUtil().setSp(24.0)),
                             ),
                             Padding(
                               padding: EdgeInsets.only(
-                                  top: ScreenUtil.instance.setHeight(10.0)),
+                                  top: ScreenUtil().setHeight(10.0)),
                             ),
                             Text(Strings.ALREAD_SELECTED +
                                 "：" +
@@ -210,12 +210,12 @@ class _GoodsDetailState extends State<GoodsDetail> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.all(ScreenUtil.instance.setWidth(10.0)),
+                    margin: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
                     child: Text(
                       Strings.SPECIFICATIONS,
                       style: TextStyle(
                           color: Colors.black54,
-                          fontSize: ScreenUtil.instance.setSp(30.0)),
+                          fontSize: ScreenUtil().setSp(30.0)),
                     ),
                   ),
                   Wrap(
@@ -223,21 +223,21 @@ class _GoodsDetailState extends State<GoodsDetail> {
                           _specificationsWidget(productList.specifications)),
                   Padding(
                     padding: EdgeInsets.only(
-                        top: ScreenUtil.instance.setHeight(10.0)),
+                        top: ScreenUtil().setHeight(10.0)),
                   ),
                   Container(
-                    margin: EdgeInsets.all(ScreenUtil.instance.setWidth(10.0)),
+                    margin: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
                     child: Text(
                       Strings.NUMBER,
                       style: TextStyle(
                           color: Colors.black54,
-                          fontSize: ScreenUtil.instance.setSp(30.0)),
+                          fontSize: ScreenUtil().setSp(30.0)),
                     ),
                   ),
                   Container(
                       margin:
-                          EdgeInsets.all(ScreenUtil.instance.setWidth(10.0)),
-                      height: ScreenUtil.instance.setHeight(80),
+                          EdgeInsets.all(ScreenUtil().setWidth(10.0)),
+                      height: ScreenUtil().setHeight(80),
                       alignment: Alignment.centerLeft,
                       child: CartNumberView(1, (number) {
                         print("${number}");
@@ -247,7 +247,7 @@ class _GoodsDetailState extends State<GoodsDetail> {
                     alignment: Alignment.bottomLeft,
                     children: <Widget>[
                       SizedBox(
-                        height: ScreenUtil.instance.setHeight(100.0),
+                        height: ScreenUtil().setHeight(100.0),
                         width: double.infinity,
                         child: InkWell(
                             onTap: () => showType == 1 ? _addCart() : _buy(),
@@ -258,7 +258,7 @@ class _GoodsDetailState extends State<GoodsDetail> {
                                 showType == 1 ? Strings.ADD_CART : Strings.BUY,
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: ScreenUtil.instance.setSp(30.0)),
+                                    fontSize: ScreenUtil().setSp(30.0)),
                               ),
                             )),
                       ),
@@ -275,7 +275,7 @@ class _GoodsDetailState extends State<GoodsDetail> {
     List<Widget> specificationsWidget = List();
     for (int i = 0; i < specifications.length; i++) {
       specificationsWidget.add(Container(
-          padding: EdgeInsets.all(ScreenUtil.instance.setWidth(10.0)),
+          padding: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
           child: InkWell(
             child: Chip(
               label: Text(
@@ -284,7 +284,7 @@ class _GoodsDetailState extends State<GoodsDetail> {
                     color: i == _specificationIndex
                         ? Colors.white
                         : Colors.black54,
-                    fontSize: ScreenUtil.instance.setSp(24.0)),
+                    fontSize: ScreenUtil().setSp(24.0)),
               ),
               backgroundColor: i == _specificationIndex
                   ? Colors.deepOrangeAccent

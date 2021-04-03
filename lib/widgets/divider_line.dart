@@ -6,7 +6,7 @@ class DividerLineView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Divider(
       color: Colors.grey[350],
-      height: ScreenUtil.instance.setHeight(1.0),
+      height: ScreenUtil().setHeight(1.0),
     );
   }
 }

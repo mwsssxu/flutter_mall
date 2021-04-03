@@ -30,13 +30,13 @@ class _FeedBackViewState extends State<FeedBackView> {
             child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.only(
-                left: ScreenUtil.instance.setWidth(20.0),
-                right: ScreenUtil.instance.setWidth(20.0)),
+                left: ScreenUtil().setWidth(20.0),
+                right: ScreenUtil().setWidth(20.0)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  height: ScreenUtil.instance.setHeight(100.0),
+                  height: ScreenUtil().setHeight(100.0),
                   child: InkWell(
                     onTap: () => _showFeedBackDialog(),
                     child: Row(
@@ -46,7 +46,7 @@ class _FeedBackViewState extends State<FeedBackView> {
                           Strings.PLEASE_SELECT_FEEDBACK_TYPE,
                           style: TextStyle(
                               color: Colors.black54,
-                              fontSize: ScreenUtil.instance.setSp(26.0)),
+                              fontSize: ScreenUtil().setSp(26.0)),
                         ),
                         Expanded(
                             child: Container(
@@ -59,16 +59,16 @@ class _FeedBackViewState extends State<FeedBackView> {
                                       style: TextStyle(
                                           color: Colors.grey,
                                           fontSize:
-                                              ScreenUtil.instance.setSp(26.0)),
+                                              ScreenUtil().setSp(26.0)),
                                     ),
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            left: ScreenUtil.instance
+                                            left: ScreenUtil()
                                                 .setWidth(10.0))),
                                     Icon(
                                       Icons.navigate_next,
                                       color: Colors.grey[350],
-                                      size: ScreenUtil.instance.setWidth(40),
+                                      size: ScreenUtil().setWidth(40),
                                     )
                                   ],
                                 )))
@@ -78,29 +78,29 @@ class _FeedBackViewState extends State<FeedBackView> {
                 ),
                 DividerLineView(),
                 Container(
-                  margin: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
+                  margin: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
                   width: double.infinity,
-                  height: ScreenUtil.instance.setHeight(300.0),
+                  height: ScreenUtil().setHeight(300.0),
                   child: TextField(
                     controller: _contentController,
                     maxLines: 10,
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize: ScreenUtil.instance.setSp(26.0)),
+                        fontSize: ScreenUtil().setSp(26.0)),
                     decoration: InputDecoration(
                       hintText: Strings.FEEDBACK_HINT_TEXT,
                       hintStyle: TextStyle(
                           color: Colors.grey,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                             color: Colors.grey,
-                            width: ScreenUtil.instance.setWidth(1.0)),
+                            width: ScreenUtil().setWidth(1.0)),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                             color: Colors.grey,
-                            width: ScreenUtil.instance.setWidth(1.0)),
+                            width: ScreenUtil().setWidth(1.0)),
                       ),
                     ),
                   ),
@@ -109,11 +109,11 @@ class _FeedBackViewState extends State<FeedBackView> {
                   children: <Widget>[
                     Container(
                       margin: EdgeInsets.only(
-                          right: ScreenUtil.instance.setWidth(20.0)),
+                          right: ScreenUtil().setWidth(20.0)),
                       child: Text(Strings.FEEDBACK_PHONE_NUMBER,
                           style: TextStyle(
                               color: Colors.black54,
-                              fontSize: ScreenUtil.instance.setSp(26.0))),
+                              fontSize: ScreenUtil().setSp(26.0))),
                     ),
                     Expanded(
                       child: TextField(
@@ -121,7 +121,7 @@ class _FeedBackViewState extends State<FeedBackView> {
                         keyboardType: TextInputType.number,
                         style: TextStyle(
                             color: Colors.black54,
-                            fontSize: ScreenUtil.instance.setSp(26.0)),
+                            fontSize: ScreenUtil().setSp(26.0)),
                         decoration: InputDecoration(
                           focusedBorder: UnderlineInputBorder(
                               borderSide:
@@ -132,7 +132,7 @@ class _FeedBackViewState extends State<FeedBackView> {
                           hintText: Strings.FEEDBACK_PHONE_NUMBER_HINT_TEXT,
                           hintStyle: TextStyle(
                               color: Colors.grey,
-                              fontSize: ScreenUtil.instance.setSp(26.0)),
+                              fontSize: ScreenUtil().setSp(26.0)),
                         ),
                       ),
                     )
@@ -140,12 +140,12 @@ class _FeedBackViewState extends State<FeedBackView> {
                 ),
                 DividerLineView(),
                 Container(
-                  height: ScreenUtil.instance.setHeight(100.0),
+                  height: ScreenUtil().setHeight(100.0),
                   margin:
-                      EdgeInsets.only(top: ScreenUtil.instance.setHeight(100)),
+                      EdgeInsets.only(top: ScreenUtil().setHeight(100)),
                   padding: EdgeInsets.only(
-                      left: ScreenUtil.instance.setWidth(20),
-                      right: ScreenUtil.instance.setWidth(20)),
+                      left: ScreenUtil().setWidth(20),
+                      right: ScreenUtil().setWidth(20)),
                   child: MaterialButton(
                     color: Colors.deepOrangeAccent,
                     splashColor: Colors.deepOrange,
@@ -155,7 +155,7 @@ class _FeedBackViewState extends State<FeedBackView> {
                       Strings.SUBMIT,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: ScreenUtil.instance.setSp(30.0)),
+                          fontSize: ScreenUtil().setSp(30.0)),
                     ),
                   ),
                 )
@@ -202,7 +202,7 @@ class _FeedBackViewState extends State<FeedBackView> {
               Strings.PLEASE_SELECT_FEEDBACK_TYPE,
               style: TextStyle(
                   color: Colors.black54,
-                  fontSize: ScreenUtil.instance.setSp(28.0)),
+                  fontSize: ScreenUtil().setSp(28.0)),
             ),
             children: <Widget>[
               SimpleDialogOption(
@@ -214,12 +214,12 @@ class _FeedBackViewState extends State<FeedBackView> {
                   },
                   child: Container(
                     alignment: Alignment.centerLeft,
-                    height: ScreenUtil.instance.setHeight(80.0),
+                    height: ScreenUtil().setHeight(80.0),
                     child: Text(
                       Strings.FEEDBACK_DYSFUNCTION,
                       style: TextStyle(
                           color: Colors.black54,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                     ),
                   )),
               DividerLineView(),
@@ -232,12 +232,12 @@ class _FeedBackViewState extends State<FeedBackView> {
                   },
                   child: Container(
                     alignment: Alignment.centerLeft,
-                    height: ScreenUtil.instance.setHeight(80.0),
+                    height: ScreenUtil().setHeight(80.0),
                     child: Text(
                       Strings.FEEDBACK_SUGGESTIONS_OPTIMIZATION,
                       style: TextStyle(
                           color: Colors.black54,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                     ),
                   )),
               DividerLineView(),
@@ -250,12 +250,12 @@ class _FeedBackViewState extends State<FeedBackView> {
                   },
                   child: Container(
                     alignment: Alignment.centerLeft,
-                    height: ScreenUtil.instance.setHeight(60.0),
+                    height: ScreenUtil().setHeight(60.0),
                     child: Text(
                       Strings.FEEDBACK_OTHER,
                       style: TextStyle(
                           color: Colors.black54,
-                          fontSize: ScreenUtil.instance.setSp(26.0)),
+                          fontSize: ScreenUtil().setSp(26.0)),
                     ),
                   )),
             ],

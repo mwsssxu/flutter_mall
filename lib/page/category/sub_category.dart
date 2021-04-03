@@ -79,8 +79,8 @@ class _SubCategoryViewState extends State<SubCategoryView> {
         shrinkWrap: true,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(ScreenUtil.instance.setWidth(20.0)),
-            height: ScreenUtil.instance.setHeight(200.0),
+            padding: EdgeInsets.all(ScreenUtil().setWidth(20.0)),
+            height: ScreenUtil().setHeight(200.0),
             child: Image.network(
               categoryImage ?? "",
               fit: BoxFit.fill,

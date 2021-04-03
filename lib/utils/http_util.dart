@@ -23,27 +23,27 @@ class HttpUtil {
       connectTimeout: 5000,
       receiveTimeout: 5000,
     );
-    dio = new Dio(options);
-    dio.interceptors
-        .add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
-      print("========================请求数据===================");
-      print("url=${options.uri.toString()}");
-      print("params=${options.data}");
-      dio.lock();
-     await SharedPreferencesUtils.getToken().then((token) {
-        options.headers[Strings.TOKEN] = token;
-        print("X-Litemall-Token=${options.headers[Strings.TOKEN]}");
-      });
-      dio.unlock();
-      return options;
-    }, onResponse: (Response response) {
-      print("========================请求数据===================");
-      print("code=${response.statusCode}");
-      print("response=${response.data}");
-    }, onError: (DioError error) {
-      print("========================请求错误===================");
-      print("message =${error.message}");
-    }));
+    // dio = new Dio(options);
+    // dio.interceptors
+    //     .add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
+    //   print("========================请求数据===================");
+    //   print("url=${options.uri.toString()}");
+    //   print("params=${options.data}");
+    //   dio.lock();
+    //  await SharedPreferencesUtils.getToken().then((token) {
+    //     options.headers[Strings.TOKEN] = token;
+    //     print("X-Litemall-Token=${options.headers[Strings.TOKEN]}");
+    //   });
+    //   dio.unlock();
+    //   return options;
+    // }, onResponse: (Response response) {
+    //   print("========================请求数据===================");
+    //   print("code=${response.statusCode}");
+    //   print("response=${response.data}");
+    // }, onError: (DioError error) {
+    //   print("========================请求错误===================");
+    //   print("message =${error.message}");
+    // }));
   }
 
   Future get(String url,

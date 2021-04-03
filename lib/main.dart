@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    builder: (context) => UserInfoModel(),
+    create: (context) => UserInfoModel(),
     child: MallApp(),
   ));
 }

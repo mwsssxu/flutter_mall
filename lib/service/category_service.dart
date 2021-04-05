@@ -15,7 +15,7 @@ class CategoryService {
   Future getCategoryData(OnSuccessList onSuccessList, {OnFail onFail}) async {
     try {
       var responseList = [];
-      var response = await HttpUtil.instance.get(Api.HOME_FIRST_CATEGORY);
+      var response = await HttpUtil().get(Api.HOME_FIRST_CATEGORY);
       if (response['errno'] == 0) {
         responseList = response['data'];
         FirstLevelListCategory firstLevelListCategory =

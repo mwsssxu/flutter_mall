@@ -50,6 +50,11 @@ class HttpUtil {
   Future get(String url, {Map<String, dynamic> parameters, Options options}) async {
     try {
       Response response;
+      var getOptions = BaseOptions(
+        connectTimeout: 5000,
+        receiveTimeout: 3000,
+      );
+      dio = Dio(getOptions);
       if (parameters != null && options != null) {
         response = await dio.get(url, queryParameters: parameters, options: options);
       } else if (parameters != null && options == null) {
@@ -57,11 +62,6 @@ class HttpUtil {
       } else if (parameters == null && options != null) {
         response = await dio.get(url, options: options);
       } else {
-        var options = BaseOptions(
-          connectTimeout: 5000,
-          receiveTimeout: 3000,
-        );
-        dio = Dio(options);
         // print(res1.data.toString());
         // response = await dio.get(url);
         response = await dio.get(url);
@@ -74,6 +74,11 @@ class HttpUtil {
 
   Future post(String url, {Map<String, dynamic> parameters, Options options}) async {
     Response response;
+    var postOptions = BaseOptions(
+      connectTimeout: 5000,
+      receiveTimeout: 3000,
+    );
+    dio = Dio(postOptions);
     if (parameters != null && options != null) {
       response = await dio.post(url, data: parameters, options: options);
     } else if (parameters != null && options == null) {

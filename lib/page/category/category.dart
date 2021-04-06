@@ -39,10 +39,10 @@ class _CategoryViewState extends State<CategoryView> {
                 flex: 2,
                 child: FirstLevelCategoryView(),
               ),
-              new Expanded(
-                flex: 8,
-                child: SubCategoryView(),
-              ),
+              // new Expanded(
+              //   flex: 8,
+              //   child: SubCategoryView(),
+              // ),
         ])));
   }
 }

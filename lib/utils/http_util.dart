@@ -19,25 +19,24 @@ class HttpUtil {
   }
 
   HttpUtil() {
-    BaseOptions options = BaseOptions(
+    var options = BaseOptions(
       connectTimeout: 5000,
-      receiveTimeout: 5000,
+      receiveTimeout: 3000,
     );
     dio = Dio(options);
     dio.interceptors.add(InterceptorsWrapper(
-        onRequest:
-        (RequestOptions options, RequestInterceptorHandler handler) async {
-      print("========================请求数据===================");
-      print("url=${options.uri.toString()}");
-      print("params=${options.data}");
-      //  dio.lock();
-      // await SharedPreferencesUtils.getToken().then((token) {
-      //    options.headers[Strings.TOKEN] = token;
-      //    print("X-Litemall-Token=${options.headers[Strings.TOKEN]}");
-      //  });
-      //  dio.unlock();
-      //  return options;
-    },
+        // onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
+        // print("========================请求数据===================");
+        // print("url=${options.uri.toString()}");
+        // print("params=${options.data}");
+        //   //  dio.lock();
+        //   // await SharedPreferencesUtils.getToken().then((token) {
+        //   //    options.headers[Strings.TOKEN] = token;
+        //   //    print("X-Litemall-Token=${options.headers[Strings.TOKEN]}");
+        //   //  });
+        //   //  dio.unlock();
+        //    return options;
+        // },
         onResponse: (Response response, ResponseInterceptorHandler handler) {
       print("========================返回数据===================");
       print("code=${response.statusCode}");
@@ -48,20 +47,23 @@ class HttpUtil {
     }));
   }
 
-  Future get(String url,
-      {Map<String, dynamic> parameters, Options options}) async {
+  Future get(String url, {Map<String, dynamic> parameters, Options options}) async {
     try {
       Response response;
       if (parameters != null && options != null) {
-        response =
-            await dio.get(url, queryParameters: parameters, options: options);
+        response = await dio.get(url, queryParameters: parameters, options: options);
       } else if (parameters != null && options == null) {
         response = await dio.get(url, queryParameters: parameters);
       } else if (parameters == null && options != null) {
         response = await dio.get(url, options: options);
       } else {
-        // Response rs = await dio.get("http://baidu.com");
-        // var dd = rs.data();
+        var options = BaseOptions(
+          connectTimeout: 5000,
+          receiveTimeout: 3000,
+        );
+        dio = Dio(options);
+        // print(res1.data.toString());
+        // response = await dio.get(url);
         response = await dio.get(url);
       }
       return response.data;
@@ -70,8 +72,7 @@ class HttpUtil {
     }
   }
 
-  Future post(String url,
-      {Map<String, dynamic> parameters, Options options}) async {
+  Future post(String url, {Map<String, dynamic> parameters, Options options}) async {
     Response response;
     if (parameters != null && options != null) {
       response = await dio.post(url, data: parameters, options: options);

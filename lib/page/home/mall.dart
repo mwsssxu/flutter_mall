@@ -22,8 +22,9 @@ class _MallMainViewState extends State<MallMainView> {
     _list
       ..add(HomePage())
       ..add(CategoryView())
-      ..add(CartView())
-      ..add(MineView());
+      // ..add(CartView())
+      // ..add(MineView())
+    ;
   }
 
   void _onItemTapped(int index) {

@@ -15,15 +15,14 @@ class _MallMainViewState extends State<MallMainView> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _list = List();
 
-
   @override
   void initState() {
     super.initState();
     _list
       ..add(HomePage())
       ..add(CategoryView())
-      // ..add(CartView())
-      // ..add(MineView())
+      ..add(CartView())
+      ..add(MineView())
     ;
   }
 
@@ -36,6 +35,7 @@ class _MallMainViewState extends State<MallMainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // IndexedStack只展示指定index的组件，其他不展示，此处根据下方导航切换
         body: IndexedStack(
           index: _selectedIndex,
           children: _list,

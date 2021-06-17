@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart' hide Router;
-import 'package:mall/constant/string.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mall/widgets/mall_icon.dart';
-import 'package:mall/service/user_service.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:mall/constant/string.dart';
 import 'package:mall/entity/user_entity.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:mall/utils/navigator_util.dart';
 import 'package:mall/event/login_event.dart';
+import 'package:mall/model/user_info.dart';
+import 'package:mall/service/user_service.dart';
+import 'package:mall/utils/navigator_util.dart';
 import 'package:mall/utils/shared_preferences_util.dart';
+import 'package:mall/widgets/mall_icon.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginView extends StatefulWidget {
   @override
@@ -148,8 +150,7 @@ class _LoginViewState extends State<LoginView> {
         userEntity = success;
         _saveUserInfo();
         _showToast(Strings.LOGIN_SUCESS);
-//        Provider.of<UserInfoModel>(context, listen: true)
-//            .updateInfo(userEntity);
+        Provider.of<UserInfoModel>(context, listen: false).updateInfo(userEntity);
         loginEventBus.fire(LoginEvent(true, url: userEntity.userInfo.avatarUrl, nickName: userEntity.userInfo.nickName));
         Navigator.pop(context);
       }, (onFail) {

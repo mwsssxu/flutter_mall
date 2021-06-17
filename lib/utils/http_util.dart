@@ -1,7 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:mall/constant/string.dart';
-import 'package:mall/utils/shared_preferences_util.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 var dio;
 
@@ -24,20 +21,18 @@ class HttpUtil {
       receiveTimeout: 3000,
     );
     dio = Dio(options);
-    dio.interceptors.add(InterceptorsWrapper(
-        // onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
-        // print("========================请求数据===================");
-        // print("url=${options.uri.toString()}");
-        // print("params=${options.data}");
-        //   //  dio.lock();
-        //   // await SharedPreferencesUtils.getToken().then((token) {
-        //   //    options.headers[Strings.TOKEN] = token;
-        //   //    print("X-Litemall-Token=${options.headers[Strings.TOKEN]}");
-        //   //  });
-        //   //  dio.unlock();
-        //    return options;
-        // },
-        onResponse: (Response response, ResponseInterceptorHandler handler) {
+    dio.interceptors.add(InterceptorsWrapper(onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
+      print("========================请求数据===================");
+      print("url=${options.uri.toString()}");
+      print("params=${options.data}");
+      //  dio.lock();
+      // await SharedPreferencesUtils.getToken().then((token) {
+      //    options.headers[Strings.TOKEN] = token;
+      //    print("X-Litemall-Token=${options.headers[Strings.TOKEN]}");
+      //  });
+      //  dio.unlock();
+      return options;
+    }, onResponse: (Response response, ResponseInterceptorHandler handler) {
       print("========================返回数据===================");
       print("code=${response.statusCode}");
       print("response=${response.data}");

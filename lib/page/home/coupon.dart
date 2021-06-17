@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart' hide Router;
-import 'package:mall/entity/home_entity.dart';
 import "package:flutter_screenutil/flutter_screenutil.dart";
-import 'package:mall/service/home_service.dart';
 import 'package:mall/constant/string.dart';
-import 'package:mall/utils/toast_util.dart';
+import 'package:mall/entity/home_entity.dart';
+import 'package:mall/service/home_service.dart';
 import 'package:mall/utils/shared_preferences_util.dart';
+import 'package:mall/utils/toast_util.dart';
 
 class CouponView extends StatelessWidget {
   List<CouponList> couponList;
@@ -39,9 +39,7 @@ class CouponView extends StatelessWidget {
                   width: ScreenUtil().setWidth(200.0),
                   child: Text(
                     "${couponEntity.discount}元",
-                    style: TextStyle(
-                        fontSize: ScreenUtil().setSp(26.0),
-                        color: Colors.grey),
+                    style: TextStyle(fontSize: ScreenUtil().setSp(26.0), color: Colors.grey),
                   ),
                 ),
                 Divider(
@@ -55,13 +53,11 @@ class CouponView extends StatelessWidget {
                       children: <Widget>[
                         Text(couponEntity.name),
                         Padding(
-                          padding: EdgeInsets.only(
-                              top: ScreenUtil().setWidth(10.0)),
+                          padding: EdgeInsets.only(top: ScreenUtil().setWidth(10.0)),
                         ),
                         Text("满${couponEntity.min}使用"),
                         Padding(
-                          padding: EdgeInsets.only(
-                              top: ScreenUtil().setWidth(10.0)),
+                          padding: EdgeInsets.only(top: ScreenUtil().setWidth(10.0)),
                         ),
                         Text("有效期${couponEntity.days}天"),
                       ],

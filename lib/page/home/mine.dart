@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart' hide Router;
-import 'package:mall/constant/string.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mall/utils/shared_preferences_util.dart';
-import 'package:mall/widgets/icon_text_arrow.dart';
-import 'package:mall/widgets/mall_icon.dart';
-import 'package:mall/utils/navigator_util.dart';
+import 'package:mall/constant/string.dart';
 import 'package:mall/event/login_event.dart';
 import 'package:mall/service/user_service.dart';
+import 'package:mall/utils/navigator_util.dart';
+import 'package:mall/utils/shared_preferences_util.dart';
 import 'package:mall/utils/toast_util.dart';
+import 'package:mall/widgets/icon_text_arrow.dart';
+import 'package:mall/widgets/mall_icon.dart';
 
 class MineView extends StatefulWidget {
   @override
@@ -85,8 +85,7 @@ class _MineViewState extends State<MineView> {
                       Container(
                         width: ScreenUtil().setWidth(100),
                         height: ScreenUtil().setHeight(100),
-                        margin: EdgeInsets.only(
-                            left: ScreenUtil().setWidth(30.0)),
+                        margin: EdgeInsets.only(left: ScreenUtil().setWidth(30.0)),
                         child: CircleAvatar(
                           radius: ScreenUtil().setWidth(50),
                           foregroundColor: Colors.deepOrangeAccent,
@@ -96,14 +95,11 @@ class _MineViewState extends State<MineView> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
-                            left: ScreenUtil().setWidth(10.0)),
+                        padding: EdgeInsets.only(left: ScreenUtil().setWidth(10.0)),
                       ),
                       Text(
                         nickName,
-                        style: TextStyle(
-                            fontSize: ScreenUtil().setSp(26.0),
-                            color: Colors.white),
+                        style: TextStyle(fontSize: ScreenUtil().setSp(26.0), color: Colors.white),
                       ),
                       Expanded(
                         child: InkWell(
@@ -115,10 +111,7 @@ class _MineViewState extends State<MineView> {
                                 alignment: Alignment.centerRight,
                                 child: Text(
                                   Strings.LOGIN_OUT,
-                                  style: TextStyle(
-                                      fontSize:
-                                          ScreenUtil().setSp(26),
-                                      color: Colors.white),
+                                  style: TextStyle(fontSize: ScreenUtil().setSp(26), color: Colors.white),
                                 ),
                               ),
                             )),
@@ -129,54 +122,44 @@ class _MineViewState extends State<MineView> {
                     onTap: () => _toLogin(),
                     child: Text(
                       Strings.CLICK_LOGIN,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: ScreenUtil().setSp(30.0)),
+                      style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(30.0)),
                     ),
                   ),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(top: ScreenUtil().setHeight(20.0)),
+            padding: EdgeInsets.only(top: ScreenUtil().setHeight(20.0)),
           ),
-          IconTextArrowView(
-              MallIcon.ORDER, Strings.ORDER, Colors.deepPurpleAccent, order),
+          IconTextArrowView(MallIcon.ORDER, Strings.ORDER, Colors.deepPurpleAccent, order),
           Divider(
             height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
-          IconTextArrowView(
-              MallIcon.COUPON, Strings.COUPON, Colors.green, mineCoupon),
+          IconTextArrowView(MallIcon.COUPON, Strings.COUPON, Colors.green, mineCoupon),
           Divider(
             height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
-          IconTextArrowView(
-              MallIcon.COLLECTION, Strings.COLLECTION, Colors.red, collect),
+          IconTextArrowView(MallIcon.COLLECTION, Strings.COLLECTION, Colors.red, collect),
           Divider(
             height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
-          IconTextArrowView(
-              MallIcon.ADDRESS, Strings.ADDRESS, Colors.amber, address),
+          IconTextArrowView(MallIcon.ADDRESS, Strings.ADDRESS, Colors.amber, address),
           Divider(
             height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
-          IconTextArrowView(
-              MallIcon.FOOTPRINT, Strings.FOOTPRINT, Colors.pink, footprint),
+          IconTextArrowView(MallIcon.FOOTPRINT, Strings.FOOTPRINT, Colors.pink, footprint),
           Divider(
             height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
-          IconTextArrowView(MallIcon.FEED_BACK, Strings.FEED_BACK,
-              Colors.blueAccent, feedbackCallback),
+          IconTextArrowView(MallIcon.FEED_BACK, Strings.FEED_BACK, Colors.blueAccent, feedbackCallback),
           Divider(
             height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
           ),
-          IconTextArrowView(
-              MallIcon.ABOUT_US, Strings.ABOUT_US, Colors.teal, aboutUs),
+          IconTextArrowView(MallIcon.ABOUT_US, Strings.ABOUT_US, Colors.teal, aboutUs),
           Divider(
             height: ScreenUtil().setHeight(1.0),
             color: Color(0xffd3d3d3),
@@ -193,15 +176,11 @@ class _MineViewState extends State<MineView> {
           return AlertDialog(
             title: Text(
               Strings.TIPS,
-              style: TextStyle(
-                  fontSize: ScreenUtil().setSp(30),
-                  color: Colors.black54),
+              style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Colors.black54),
             ),
             content: Text(
               Strings.LOGIN_OUT_TIPS,
-              style: TextStyle(
-                  fontSize: ScreenUtil().setSp(30),
-                  color: Colors.black54),
+              style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Colors.black54),
             ),
             actions: <Widget>[
               FlatButton(

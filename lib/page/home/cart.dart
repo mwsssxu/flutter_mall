@@ -57,9 +57,7 @@ class _CartViewState extends State<CartView> {
   }
 
   _refreshEvent() {
-    eventBus
-        .on<RefreshEvent>()
-        .listen((RefreshEvent refreshEvent) => _getCartData(token));
+    eventBus.on<RefreshEvent>().listen((RefreshEvent refreshEvent) => _getCartData(token));
     loginEventBus.on<LoginEvent>().listen((LoginEvent loginEvent) {
       if (loginEvent.isLogin) {
         _getCartData(SharedPreferencesUtils.token);
@@ -93,10 +91,7 @@ class _CartViewState extends State<CartView> {
                               }),
                           Container(
                             height: ScreenUtil().setHeight(120.0),
-                            decoration: ShapeDecoration(
-                                shape: Border(
-                                    top: BorderSide(
-                                        color: Colors.grey, width: 1.0))),
+                            decoration: ShapeDecoration(shape: Border(top: BorderSide(color: Colors.grey, width: 1.0))),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
@@ -107,16 +102,12 @@ class _CartViewState extends State<CartView> {
                                       _setCartItemCheck(bool);
                                     }),
                                 Container(
-                                  width:
-                                      ScreenUtil().setWidth(200.0),
-                                  child: Text(Strings.TOTAL_MONEY +
-                                      "${cartListEntity.cartTotal.checkedGoodsAmount}"),
+                                  width: ScreenUtil().setWidth(200.0),
+                                  child: Text(Strings.TOTAL_MONEY + "${cartListEntity.cartTotal.checkedGoodsAmount}"),
                                 ),
                                 Expanded(
                                     child: Container(
-                                  margin: EdgeInsets.only(
-                                      right: ScreenUtil()
-                                          .setWidth(30.0)),
+                                  margin: EdgeInsets.only(right: ScreenUtil().setWidth(30.0)),
                                   alignment: Alignment.centerRight,
                                   child: RaisedButton(
                                     onPressed: () {
@@ -125,10 +116,7 @@ class _CartViewState extends State<CartView> {
                                     color: Colors.deepOrangeAccent,
                                     child: Text(
                                       Strings.SETTLEMENT,
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: ScreenUtil()
-                                              .setSp(26.0)),
+                                      style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(26.0)),
                                     ),
                                   ),
                                 ))
@@ -151,9 +139,7 @@ class _CartViewState extends State<CartView> {
                             ),
                             Text(
                               Strings.NO_DATA_TEXT,
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.deepOrangeAccent),
+                              style: TextStyle(fontSize: 16.0, color: Colors.deepOrangeAccent),
                             )
                           ],
                         ),
@@ -168,9 +154,7 @@ class _CartViewState extends State<CartView> {
                     },
                     child: Text(
                       Strings.LOGIN,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: ScreenUtil().setSp(30.0)),
+                      style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(30.0)),
                     ),
                   ),
                 ),
@@ -202,35 +186,25 @@ class _CartViewState extends State<CartView> {
                   onChanged: (bool) {
                     _checkCart(index, bool);
                   }),
-              CachedImageView(
-                  ScreenUtil().setWidth(140.0),
-                  ScreenUtil().setWidth(140.0),
-                  _cartList[index].picUrl),
+              CachedImageView(ScreenUtil().setWidth(140.0), ScreenUtil().setWidth(140.0), _cartList[index].picUrl),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     _cartList[index].goodsName,
-                    style: TextStyle(
-                        fontSize: ScreenUtil().setSp(24.0),
-                        color: Colors.black54),
+                    style: TextStyle(fontSize: ScreenUtil().setSp(24.0), color: Colors.black54),
                   ),
-                  Padding(
-                      padding: EdgeInsets.only(
-                          top: ScreenUtil().setHeight(10.0))),
+                  Padding(padding: EdgeInsets.only(top: ScreenUtil().setHeight(10.0))),
                   Text(
                     "¥${_cartList[index].price}",
-                    style: TextStyle(
-                        fontSize: ScreenUtil().setSp(24.0),
-                        color: Colors.grey),
+                    style: TextStyle(fontSize: ScreenUtil().setSp(24.0), color: Colors.grey),
                   )
                 ],
               ),
               Expanded(
                   child: Container(
-                padding: EdgeInsets.only(
-                    right: ScreenUtil().setWidth(20.0)),
+                padding: EdgeInsets.only(right: ScreenUtil().setWidth(20.0)),
                 alignment: Alignment.centerRight,
                 child: CartNumberView(_cartList[index].number, (value) {
                   _updateCart(index, value);
